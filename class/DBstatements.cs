@@ -10,7 +10,7 @@ using MySql.Data.MySqlClient;
 namespace organizerFitness
 {
     public class DBstatements
-{
+    {
         private MySqlConnection connection;
         public string server;
         public string database;
@@ -26,53 +26,45 @@ namespace organizerFitness
         //Initialize values
         private void Initialize()
         {
-            /*server = "mimasrv2.ddns.net";
-            database = "db_organizerFitness";
-            uid = "mima";
-            password = "mima_10492";
-            string connectionString;
-            //connectionString = "Server=mimasrv2.ddns.net;Port=3306;Database=db_organizerFitness;Uid=mima;Pwd=mima_10492;";
-            connectionString = "Server=" + server + "; Port=3306; Database=" + database + ";Uid=" + uid + "; Pwd=" + password;
-            //string connectionString = "Server=" + server + "; Port=1234; Database=" + database + "; Uid=" + uid + "; Pwd=" + password;
-            connection = new MySqlConnection(connectionString);*/
+           
         }
 
         //open connection to database
-        private bool OpenConnection()
+        public bool OpenConnection()
         {
-try
-{
-                MySqlConnectionStringBuilder connectionString = new MySqlConnectionStringBuilder();
-                connectionString.Server = "mimasrv2.ddns.net";
-                connectionString.Port = 3306;
-                connectionString.UserID = "mima";
-                connectionString.Password = "mima_10492";
-                connectionString.Database = "db_organizerFitness";
-                connectionString.SslMode = MySqlSslMode.None;
+        try
+        {
+            MySqlConnectionStringBuilder connectionString = new MySqlConnectionStringBuilder();
+            connectionString.Server = "mimasrv2.ddns.net";
+            connectionString.Port = 3306;
+            connectionString.UserID = "mima";
+            connectionString.Password = "mima_10492";
+            connectionString.Database = "db_organizerFitness";
+            connectionString.SslMode = MySqlSslMode.None;
 
 
-                this.connection = new MySqlConnection(connectionString.ToString());
-                this.connection.Open();
+            this.connection = new MySqlConnection(connectionString.ToString());
+            this.connection.Open();
 
-                return true;
-            }
-            catch (MySqlException ex)
-{
-                switch (ex.Number)
-                {
-                    case 0:
-                        MessageBox.Show("Cannot connect to server.  Contact administrator");
-                        break;
-                    case 1045:
-                        MessageBox.Show("Invalid username/password, please try again");
-                        break;
-                }
-                return false;
-            }
+            return true;
         }
+        catch (MySqlException ex)
+        {
+            switch (ex.Number)
+            {
+                case 0:
+                   MessageBox.Show("Cannot connect to server.  Contact administrator");
+                   break;
+                case 1045:
+                    MessageBox.Show("Invalid username/password, please try again");
+                    break;
+            }
+            return false;
+        }
+    }
 
         //Close connection
-        private bool CloseConnection()
+        public bool CloseConnection()
         {
             try
             {
@@ -126,6 +118,11 @@ try
                 MessageBox.Show("Check your Internet");
                 return 0;
             }
+        }
+
+        public void DataFill()
+        {
+
         }
 
         //Insert statement
