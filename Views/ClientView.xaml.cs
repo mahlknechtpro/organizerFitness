@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using organizerFitness.forms;
 
 namespace organizerFitness.Views
 {
@@ -56,9 +57,10 @@ namespace organizerFitness.Views
             
         }
 
-        private void NewClient_Click(object sender, RoutedEventArgs e)
+        public void NewClient_Click(object sender, RoutedEventArgs e)
         {
-
+            forms.NewClient newClientScreen = new forms.NewClient();
+            newClientScreen.Show();
         }
 
         private void InsertValues_Click(object sender, RoutedEventArgs e)
@@ -67,6 +69,11 @@ namespace organizerFitness.Views
         }
 
         private void ChangeData_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteClient_Click(object sender, RoutedEventArgs e)
         {
 
         }
