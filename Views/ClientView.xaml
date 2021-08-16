@@ -18,6 +18,15 @@
         </Button>
 
 
-        <DataGrid x:Name="grdClients" Grid.Row="1" ItemsSource="{Binding }" />
+        <DataGrid x:Name="grdClients" Grid.Row="1" ItemsSource="{Binding }">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Change data" Click="ChangeData_Click" />
+                    <MenuItem Header="Insert values" Click="InsertValues_Click" />
+                    
+                    <MenuItem Header="New Client" Click="NewClient_Click" />
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
     </Grid>
 </UserControl>

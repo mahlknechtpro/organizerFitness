@@ -55,5 +55,20 @@ namespace organizerFitness.Views
             DB.CloseConnection();
             
         }
+
+        private void NewClient_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void InsertValues_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ChangeData_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
