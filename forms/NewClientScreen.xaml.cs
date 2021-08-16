@@ -23,5 +23,25 @@ namespace organizerFitness.forms
         {
             InitializeComponent();
         }
+
+        private void btn_newClient_close(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_newClient_save(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        #region GotFocus
+        private void gf_year(object sender, RoutedEventArgs e)
+        {
+            if(txtb_birthyear.Text == "")
+            {
+                txtb_birthyear.Text = "1900";
+            }
+        }
+        #endregion
     }
 }

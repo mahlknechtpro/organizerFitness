@@ -7,6 +7,29 @@
         mc:Ignorable="d"
         Title="NewClient" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
         
+        <!--Persoenliche Daten-->
+        <Label Margin="20,0,0,0" FontWeight="ExtraBold" Width="95" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Personal Data</Label>
+        
+        <Label Margin="20,30,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">First Name</Label>
+        <TextBox Margin="30,50,0,0" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_firstname"></TextBox>
+
+        <Label Margin="170,30,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Last Name</Label>
+        <TextBox Margin="180,50,0,0" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_lastname"></TextBox>
+
+        <Label Margin="320,30,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Birthday</Label>
+        <TextBox Margin="330,50,0,0" Width="40" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_birthyear" GotFocus="gf_year"></TextBox>
+
+        <!--Speichern - Schließen-->
+        <Button Grid.Row="2" Height="20" Width="70" HorizontalAlignment="Right" Margin="0,0,10,0" Click="btn_newClient_close">Close</Button>
+        <Button Grid.Row="2" Height="20" Width="70" HorizontalAlignment="Right" Margin="0,0,90,0" Click="btn_newClient_save">Save</Button>
     </Grid>
 </Window>
