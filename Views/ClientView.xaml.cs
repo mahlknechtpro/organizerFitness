@@ -41,9 +41,9 @@ namespace organizerFitness.Views
                 "SslMode=none;";
 
             string cmdString;
-            cmdString = "SELECT cid AS Nummer, c_lastname AS Nachname, c_name AS Vorname, c_birth AS Geburtstag, c_height AS Gewicht," +
+            cmdString = "SELECT cid AS Nummer, c_lastname AS Nachname, c_name AS Vorname, DATE_FORMAT(c_birth, '%d-%m-%Y') AS Geburtstag, c_height AS Gewicht," +
                 " c_startweight AS Startgewicht, c_codfisc AS Steuernr, c_pay AS Bezahlung, c_phone AS Handynr, c_email AS Mail FROM t_clients";
-
+            
             MySqlConnection connection = new MySqlConnection(MyConString);
             MySqlCommand cmdSel = new MySqlCommand(cmdString, connection);
             DataTable dt = new DataTable();

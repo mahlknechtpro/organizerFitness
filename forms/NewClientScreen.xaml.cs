@@ -31,17 +31,25 @@ namespace organizerFitness.forms
 
         private void btn_newClient_save(object sender, RoutedEventArgs e)
         {
+            DBstatements DB = new DBstatements();
 
-        }
+            string firstname = txtb_firstname.Text;
+            string lastname = txtb_lastname.Text;
+            string birth_day = txtb_birthday.Text;
+            string birth_month = txtb_birthmonth.Text;
+            string birth_year = txtb_birthyear.Text;
+            string phone = txtb_phone.Text;
+            string email = txtb_email.Text;
+            string codfisc = txtb_codfisc.Text;
+            string payment = cmb_pay.Text;
+            string height = txtb_height.Text;
+            string weight = txtb_weight.Text;
+            string birthdate;
 
-        #region GotFocus
-        private void gf_year(object sender, RoutedEventArgs e)
-        {
-            if(txtb_birthyear.Text == "")
-            {
-                txtb_birthyear.Text = "1900";
-            }
+            birthdate = birth_year + "-" + birth_month + "-" + birth_day;
+
+            DB.InsertNewClient(firstname,lastname,birthdate,phone,email, codfisc,payment,height,weight);
+            //(string firstname, string lastname, string birthdate, string phone, string email, string codfisc, string payment, string height, string weight)
         }
-        #endregion
     }
 }
