@@ -127,7 +127,7 @@ namespace organizerFitness
             //(`c_name`,`c_lastname`,`c_birth`,`c_height`,`c_startweight`,`c_codfisc`,`c_pay`,`c_phone`,`c_email`)
             //VALUES('Juliana','Entacher','1993-11-16',48.5,52.8,'NTCJLN93G16B152J','Kreditkarte','+393664244643','julianaentacher@hotmail.com');
             string query = "INSERT INTO t_clients(`c_name`,`c_lastname`,`c_birth`,`c_height`,`c_startweight`,`c_codfisc`,`c_pay`,`c_phone`,`c_email`)" +
-                "VALUES('"+ firstname + "','" + lastname + "','" + birthdate + "','" + phone + "','" + email + "','" + codfisc + "','" + payment + "','" + height + "','" + weight + "')";
+                "VALUES('"+ firstname + "','" + lastname + "','" + birthdate + "','" + height + "','" + weight + "','" + codfisc + "','" + payment + "','" + phone + "','" + email + "')";
 
             Console.WriteLine("Test: " + query);
 
@@ -158,13 +158,6 @@ namespace organizerFitness
         public void Delete()
         {
         }
-
-        //Select statement
-        /*public List<string>[] Select()
-        {
-            List<string> test =["test1", "test2"];
-            return test[0];
-        }*/
 
         //Count statement
         public int Count()

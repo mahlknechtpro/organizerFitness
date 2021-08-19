@@ -48,7 +48,10 @@ namespace organizerFitness.forms
 
             birthdate = birth_year + "-" + birth_month + "-" + birth_day;
 
-            DB.InsertNewClient(firstname,lastname,birthdate,phone,email, codfisc,payment,height,weight);
+            height = height.Replace(',', '.');
+            weight = weight.Replace(',', '.');
+
+            DB.InsertNewClient(firstname,lastname,birthdate,phone,email,codfisc,payment,height,weight);
             //(string firstname, string lastname, string birthdate, string phone, string email, string codfisc, string payment, string height, string weight)
         }
     }
