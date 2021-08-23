@@ -136,10 +136,14 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets\" />
     <Folder Include="packages\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="forms\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

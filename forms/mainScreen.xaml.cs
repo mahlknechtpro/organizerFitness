@@ -42,7 +42,7 @@ namespace organizerFitness.forms
         private void startclock()
         {
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(30);
+            timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += tickevent;
             timer.Start();
 

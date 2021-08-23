@@ -143,6 +143,9 @@
         </Button>
 
         <Label Grid.Column="0" Grid.Row="2" FontSize="15" HorizontalAlignment="Left" x:Name="main_time" IsEnabled="False" Background="Transparent" BorderThickness="0" Margin="10,0,0,0" />
+        <Label Content="Created by " Grid.Column="1" Grid.Row="2" FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="main_created" IsEnabled="False" Background="Transparent" BorderThickness="0" Margin="10,0,110,0" />
+        <Image Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Source="logo.png" Visibility="Visible" Margin="0,0,10,0" Height="30" Width="100" Stretch="Uniform" x:Name="img_logo" />
+        
 
     </Grid>
 </Window>

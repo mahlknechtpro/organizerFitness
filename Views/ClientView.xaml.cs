@@ -92,6 +92,11 @@ namespace organizerFitness.Views
         private void ReloadData_Click(object sender, RoutedEventArgs e)
         {
             fillDataGrid();
+
+            if (txtb_search.Text != "")
+            {
+                txtb_search.Text = "";
+            }
         }
 
         private void fillDataGrid()
