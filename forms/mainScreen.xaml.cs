@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace organizerFitness.forms
 {
@@ -20,6 +21,7 @@ namespace organizerFitness.forms
     /// </summary>
     public partial class mainScreen : Window
     {
+
         private static mainScreen app;
         public static mainScreen App
         {
@@ -30,11 +32,29 @@ namespace organizerFitness.forms
         {
             InitializeComponent();
 
+            startclock();
+
             //Makes the MainWindow object public so that it and its public methods are visible in the whole project.
             mainScreen.App = this;
 
             SwitchPage(new MainViewModel());
         }
+        private void startclock()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(30);
+            timer.Tick += tickevent;
+            timer.Start();
+
+        }
+
+        private void tickevent(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            main_time.Content = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            //Console.WriteLine(DateTime.Now.ToString("dd/MM/yyyy HH:mm"));
+        }
+
 
         public void SwitchPage(Object page)
         {
@@ -69,5 +89,8 @@ namespace organizerFitness.forms
         {
             SwitchPage(new ClientViewModel());
         }
+
+        
+
     }
 }

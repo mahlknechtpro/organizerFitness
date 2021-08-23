@@ -142,7 +142,7 @@
             </Button.Style>
         </Button>
 
-        <Label Grid.Column="0" Grid.Row="3" FontSize="15" HorizontalAlignment="Left" x:Name="main_time" IsEnabled="False" Background="Transparent" BorderThickness="0" Margin="10,0,0,0" />
+        <Label Grid.Column="0" Grid.Row="2" FontSize="15" HorizontalAlignment="Left" x:Name="main_time" IsEnabled="False" Background="Transparent" BorderThickness="0" Margin="10,0,0,0" />
 
     </Grid>
 </Window>
