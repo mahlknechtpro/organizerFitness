@@ -126,5 +126,10 @@ namespace organizerFitness.Views
             //Close Database
             DB.CloseConnection();
         }
+
+        private void NewContract_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

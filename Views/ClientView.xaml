@@ -26,6 +26,7 @@
                 <ContextMenu>
                     <MenuItem Header="Change data" Click="ChangeData_Click" />
                     <MenuItem Header="Insert values" Click="InsertValues_Click" />
+                    <MenuItem Header="Contract" Click="NewContract_Click"/>
                     <Separator />
                     <MenuItem Header="New Client" Click="NewClient_Click" />
                     <MenuItem Header="Delete Client" Click="DeleteClient_Click" />

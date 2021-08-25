@@ -1,0 +1,13 @@
+﻿<Window x:Class="organizerFitness.forms.newContract"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:organizerFitness.forms"
+        mc:Ignorable="d"
+        Title="New contract" Height="450" Width="800">
+    <Grid>
+        <Label Content="Client-Nr." Height="25" Width="75" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,10,0,0" />
+        <TextBox x:Name="txtb_clientnr" Height="25" Width="75" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="85,10,0,0" ></TextBox>
+    </Grid>
+</Window>

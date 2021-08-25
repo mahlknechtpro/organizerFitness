@@ -65,6 +65,9 @@
     <Compile Include="forms\NewClientScreen.xaml.cs">
       <DependentUpon>NewClientScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="forms\newContract.xaml.cs">
+      <DependentUpon>newContract.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Viewmodels\ClientViewModel.cs" />
     <Compile Include="Viewmodels\MainViewModel.cs" />
     <Compile Include="Views\ClientView.xaml.cs">
@@ -78,6 +81,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="forms\NewClientScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="forms\newContract.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
