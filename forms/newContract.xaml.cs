@@ -23,5 +23,27 @@ namespace organizerFitness.forms
         {
             InitializeComponent();
         }
+
+        private void btn_saveContract(object sender, RoutedEventArgs e)
+        {
+            string conLength = cmb_lengthcontract.SelectedItem.ToString();
+            string datum = cal_beginContract.SelectedDate.Value.Date.ToShortDateString();
+            Console.WriteLine("Contract length: " + conLength);
+            Console.WriteLine("datum : " + datum);
+
+            if (conLength != "")
+            {
+                
+            }
+            else if (conLength == "")
+            {
+                MessageBox.Show("Please, insert the length of the contract!");
+            }
+        }
+
+        private void btn_closeContract(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
