@@ -4,13 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:organizerFitness.forms"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="New contract" Height="300" Width="350">
     <Grid>
         <Label Content="Client-Nr." Height="25" Width="75" VerticalContentAlignment="Center" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,10,0,0" />
         <TextBox x:Name="txtb_clientnr" Height="25" Width="75" HorizontalAlignment="Left"  VerticalAlignment="Top" VerticalContentAlignment="Center" Margin="20,30,0,0" ></TextBox>
 
-        <Label Content="Contract length" Height="25" Width="75" HorizontalAlignment="Left"  VerticalAlignment="Top" VerticalContentAlignment="Center" Margin="10,60,0,0" />
+        <Label Content="Contract length" Height="25" Width="100" HorizontalAlignment="Left"  VerticalAlignment="Top" VerticalContentAlignment="Center" Margin="10,60,0,0" />
         <ComboBox x:Name="cmb_lengthcontract"  Height="25" Width="80" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="20,80,0,0">
             <ComboBoxItem IsSelected="True">1 month</ComboBoxItem>
             <ComboBoxItem>3 months</ComboBoxItem>
@@ -19,7 +20,7 @@
         </ComboBox>
 
         <Label Content="Begin date" Height="25" Width="75" HorizontalAlignment="Left"  VerticalAlignment="Top" VerticalContentAlignment="Center" Margin="120,10,0,0" />
-        <Calendar x:Name="cal_beginContract" Margin="120,35,0,0" BorderThickness="2" SelectionMode="SingleDate" ></Calendar>
+        <Calendar x:Name="cal_beginContract" Margin="120,35,0,0" BorderThickness="2" SelectionMode="SingleDate" SelectedDate="{x:Static sys:DateTime.Now}" ></Calendar>
 
         <Button x:Name="btn_savecontract" Content="Save" Height="25" Width="75" HorizontalAlignment="Right"  VerticalAlignment="Bottom" Margin="0,0,120,10" Click="btn_saveContract"></Button>
         <Button x:Name="btn_abortcontract" Content="Cancel" Height="25" Width="75" HorizontalAlignment="Right"  VerticalAlignment="Bottom" Margin="0,0,30,10" Click="btn_closeContract"></Button>
