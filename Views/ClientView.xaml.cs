@@ -129,6 +129,8 @@ namespace organizerFitness.Views
 
         private void NewContract_Click(object sender, RoutedEventArgs e)
         {
+            int clientNr = 0;
+
             forms.newContract newContractWindow = new forms.newContract();
             newContractWindow.Show();
             

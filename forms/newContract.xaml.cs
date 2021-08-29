@@ -29,6 +29,10 @@ namespace organizerFitness.forms
             string datum;
             string conLength;
             int length = 0;
+            string year;
+            string month;
+            string day;
+            string conStart;
 
             conLength = cmb_lengthcontract.SelectedItem.ToString().Remove(0,38);
             Console.WriteLine("conlength= " + conLength);
@@ -54,8 +58,15 @@ namespace organizerFitness.forms
             datum = cal_beginContract.SelectedDate.Value.Date.ToShortDateString();
             Console.WriteLine("datum : " + datum);
             Console.WriteLine("Monate : " + length);
-            
-            
+
+            year = datum.Substring(6, 4);
+            month = datum.Substring(3, 2);
+            day = datum.Substring(0, 2);
+
+            conStart = year + "-" + month + "-" + day;
+
+            Console.WriteLine("conStart: " + conStart + " Länge: " + length);
+
         }
 
         private void btn_closeContract(object sender, RoutedEventArgs e)
