@@ -90,7 +90,9 @@ namespace organizerFitness.forms
             SwitchPage(new ClientViewModel());
         }
 
-        
-
+        private void ButtonSettings_Click(object sender, RoutedEventArgs e)
+        {
+            SwitchPage(new SettingsViewModel());
+        }
     }
 }
