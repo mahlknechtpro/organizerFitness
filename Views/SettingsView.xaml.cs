@@ -1,4 +1,6 @@
-﻿using System;
+﻿using organizerFitness.Viewmodels;
+using organizerFitness.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace organizerFitness.Views
 {
@@ -23,6 +26,16 @@ namespace organizerFitness.Views
         public SettingsView()
         {
             InitializeComponent();
+        }
+
+        private void SaveSettings_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ReturnSettings_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
