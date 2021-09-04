@@ -149,6 +149,21 @@
         <Label Content="Created by " Grid.Column="1" Grid.Row="2" FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="main_created" IsEnabled="False" Background="Transparent" BorderThickness="0" Margin="10,0,110,0" />
         <Image Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Source="logo.png" Visibility="Visible" Margin="0,0,10,0" Height="30" Width="100" Stretch="Uniform" x:Name="img_logo" />
         
-
+        
+        
+        <!--
+        <Button Grid.Column="0" Grid.Row="2"  Height="30" Width="30" HorizontalAlignment="Right" Margin="0,0,74,0">
+            <fa:FontAwesome Icon="Backward" FontSize="20" VerticalAlignment="Center" />
+        </Button>
+        
+        <Button Grid.Column="0" Grid.Row="2"  Height="30" Width="30" HorizontalAlignment="Right" Margin="0,0,42,0">
+            <fa:FontAwesome Icon="Play" FontSize="20" VerticalAlignment="Center" />
+        </Button>
+        
+        <Button Grid.Column="0" Grid.Row="2"  Height="30" Width="30" HorizontalAlignment="Right" Margin="0,0,10,0">
+            <fa:FontAwesome Icon="Forward" FontSize="20" VerticalAlignment="Center" />
+        </Button>
+        -->
+        
     </Grid>
 </Window>
