@@ -80,13 +80,17 @@ namespace organizerFitness.forms
             var dat = new DateTime(yearEnd, monthEnd, dayEnd);
             Console.WriteLine(dat.AddMonths(length).ToString("d"));
 
-            year = dat.Substring(6, 4);
-            month = dat.Substring(3, 2);
-            day = dat.Substring(0, 2);
+            year = dat.AddMonths(length).ToString("d").Substring(6, 4);
+            month = dat.AddMonths(length).ToString("d").Substring(3, 2);
+            day = dat.AddMonths(length).ToString("d").Substring(0, 2);
+
+            conEnd = year + "-" + month + "-" + day;
+
 
             Console.WriteLine("conStart: " + conStart + " Länge: " + length);
+            Console.WriteLine("conEnd: " + conEnd);
 
-            //db.InsertNewContract(clientNr, conStart, conEnd, length);
+            db.InsertNewContract(clientNr, conStart, conEnd, length);
 
         }
 

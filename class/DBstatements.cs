@@ -153,7 +153,31 @@ namespace organizerFitness
 
         public void InsertNewContract(string clientNr, string conStart, string conEnd, int length)
         {
-            Console.WriteLine("New Contract- Data: "+ clientNr +" " + conStart + " " + length);
+            Console.WriteLine("New Contract- Data: "+ clientNr +" " + conStart + " " + length + " " + conEnd);
+
+            //Check if contract already
+
+            //If yes put flag co_active on 0
+
+
+            //Insert new contract for client
+            string query = "INSERT INTO t_contracts(`co_number`,`co_begin`,`co_end`,`co_active`,`co_duration`) " +
+                "VALUES ('" + clientNr + "','" + conStart + "','" + conEnd + "', 1,'" + length + "');" ;
+            Console.WriteLine("Test: " + query);
+
+            if (this.OpenConnection() == true)
+            {
+                //Create Mysql Command
+                MySqlCommand cmd = new MySqlCommand(query, this.connection);
+
+                MySqlDataReader MyReader2 = cmd.ExecuteReader();
+
+                MessageBox.Show("Data saved!");
+                
+                this.connection.Close();
+
+            }
+
         }
 
         //Insert statement
