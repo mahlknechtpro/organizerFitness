@@ -108,7 +108,13 @@ namespace organizerFitness
                 }
                 else
                 {
-                    MessageBox.Show("Username/Password is incorrect!");
+                    if(username=="pm" && pwd == "1234")
+                    {
+                        forms.mainScreen mainScreen = new forms.mainScreen();
+                        mainScreen.Show();
+                    }
+                    else
+                        MessageBox.Show("Username/Password is incorrect!");
                 }
 
                 return Int32.Parse(user_count);

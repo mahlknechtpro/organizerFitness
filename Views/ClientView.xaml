@@ -12,7 +12,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="txtb_search" HorizontalAlignment="Right" VerticalAlignment="Center" Width="120" Margin="0,0,65,0"></TextBox>
+        <TextBox x:Name="txtb_search" HorizontalAlignment="Right" VerticalAlignment="Center" Width="120" Margin="0,0,65,0" KeyDown="ClientSearch_KeyDown"></TextBox>
         <Button ToolTip="Search" HorizontalAlignment="Right" Grid.Row="0" Height="25" Width="25" Margin="0,0,30,0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent" Click="SearchData_Click">
             <fa:FontAwesome Icon="Search" FontSize="20" />
         </Button>

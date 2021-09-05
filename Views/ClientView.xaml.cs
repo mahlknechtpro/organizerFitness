@@ -135,5 +135,45 @@ namespace organizerFitness.Views
             newContractWindow.Show();
             
         }
+
+        private void ClientSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            searchData();
+        }
+
+        private void searchData()
+        {
+            //Initialize variable
+            string searchValue = txtb_search.Text;
+
+            //Open Database
+            DB.OpenConnection();
+
+            string MyConString =
+                "SERVER=mimasrv2.ddns.net;" +
+                "DATABASE=db_organizerFitness;" +
+                "UID=mima;" +
+                "PASSWORD=mima_10492;" +
+                "SslMode=none;";
+
+            string cmdString;
+            cmdString = "SELECT cid AS Nummer, c_lastname AS Nachname, c_name AS Vorname, DATE_FORMAT(c_birth, '%d-%m-%Y') AS Geburtstag, c_height AS Gewicht," +
+                " c_startweight AS Startgewicht, c_codfisc AS Steuernr, c_pay AS Bezahlung, c_phone AS Handynr, c_email AS Mail FROM t_clients " +
+                "WHERE cid like '%" + searchValue + "%' || c_lastname like '%" + searchValue + "%' || c_name like '%" + searchValue + "%' || c_birth like '%" + searchValue + "%' || c_height like '%" + searchValue + "%'" +
+                " || c_startweight like '%" + searchValue + "%' || c_codfisc like '%" + searchValue + "%' || c_pay like '%" + searchValue + "%' || c_phone like '%" + searchValue + "%' || c_email like '%" + searchValue + "%'";
+
+            Console.WriteLine("cmdString: " + cmdString);
+
+            MySqlConnection connection = new MySqlConnection(MyConString);
+            MySqlCommand cmdSel = new MySqlCommand(cmdString, connection);
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
+            da.Fill(dt);
+            grdClients.DataContext = dt;
+
+
+            //Close Database
+            DB.CloseConnection();
+        }
     }
 }
