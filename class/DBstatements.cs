@@ -155,7 +155,7 @@ namespace organizerFitness
         {
             Console.WriteLine("New Contract- Data: "+ clientNr +" " + conStart + " " + length + " " + conEnd);
 
-            //Check if contract already
+            //Check if contract already exists
 
             //If yes put flag co_active on 0
 
