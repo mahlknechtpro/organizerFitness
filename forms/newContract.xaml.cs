@@ -26,14 +26,22 @@ namespace organizerFitness.forms
 
         private void btn_saveContract(object sender, RoutedEventArgs e)
         {
+            DBstatements db = new DBstatements();
+
             string datum;
+            string clientNr;
             string conLength;
             int length = 0;
             string year;
+            int yearEnd;
             string month;
+            int monthEnd;
             string day;
+            int dayEnd;
             string conStart;
+            string conEnd;
 
+            clientNr = txtb_clientnr.Text;
             conLength = cmb_lengthcontract.SelectedItem.ToString().Remove(0,38);
             Console.WriteLine("conlength= " + conLength);
             switch (conLength)
@@ -65,7 +73,20 @@ namespace organizerFitness.forms
 
             conStart = year + "-" + month + "-" + day;
 
+            yearEnd = Int32.Parse(year);
+            monthEnd = Int32.Parse(month);
+            dayEnd = Int32.Parse(day);
+
+            var dat = new DateTime(yearEnd, monthEnd, dayEnd);
+            Console.WriteLine(dat.AddMonths(length).ToString("d"));
+
+            year = dat.Substring(6, 4);
+            month = dat.Substring(3, 2);
+            day = dat.Substring(0, 2);
+
             Console.WriteLine("conStart: " + conStart + " Länge: " + length);
+
+            //db.InsertNewContract(clientNr, conStart, conEnd, length);
 
         }
 

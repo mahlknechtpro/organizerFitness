@@ -150,6 +150,12 @@ namespace organizerFitness
 
             }
         }
+
+        public void InsertNewContract(string clientNr, string conStart, string conEnd, int length)
+        {
+            Console.WriteLine("New Contract- Data: "+ clientNr +" " + conStart + " " + length);
+        }
+
         //Insert statement
         public void Insert()
         {
