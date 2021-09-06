@@ -82,10 +82,15 @@ namespace organizerFitness.Views
                 "SslMode=none;";
 
             string cmdString;
-            cmdString = "SELECT tcl.cid AS Nummer, tcl.c_lastname AS Nachname, tcl.c_name AS Vorname, DATE_FORMAT(tcl.c_birth, '%d-%m-%Y') AS Geburtstag, tcl.c_height AS Gewicht," +
+            cmdString = "SELECT tcl.cid AS Nummer, t_clients.c_lastname AS Nachname, t_clients.c_name AS Vorname, DATE_FORMAT(t_clients.c_birth, '%d-%m-%Y') AS Geburtstag, t_clients.c_height AS Gewicht," +
+                        "t_clients.c_startweight AS Startgewicht, t_clients.c_codfisc AS Steuernr, t_clients.c_pay AS Bezahlung, t_clients.c_phone AS Handynr, t_clients.c_email AS Mail, t_contracts.co_active AS Aktiv," +
+                        "t_contracts.co_begin AS Beginn, t_contracts.co_duration AS Dauer, t_contracts.co_end AS Ende, t_contracts.co_paid as Bezahlt" +
+                        "FROM t_clients INNER JOIN t_contracts ON t_clients.cid = t_contracts.co_number";
+
+            /*"SELECT tcl.cid AS Nummer, tcl.c_lastname AS Nachname, tcl.c_name AS Vorname, DATE_FORMAT(tcl.c_birth, '%d-%m-%Y') AS Geburtstag, tcl.c_height AS Gewicht," +
                         "tcl.c_startweight AS Startgewicht, tcl.c_codfisc AS Steuernr, tcl.c_pay AS Bezahlung, tcl.c_phone AS Handynr, tcl.c_email AS Mail, tco.co_active AS Aktiv," +
                         "tco.co_begin AS Beginn, tco.co_duration AS Dauer, tco.co_end AS Ende, tco.co_paid as Bezahlt" +
-                        "FROM t_clients AS tcl INNER JOIN t_contracts AS tco ON tcl.cid = tco.co_number";
+                        "FROM t_clients AS tcl INNER JOIN t_contracts AS tco ON tcl.cid = tco.co_number";*/
 
             MySqlConnection connection = new MySqlConnection(MyConString);
             MySqlCommand cmdSel = new MySqlCommand(cmdString, connection);

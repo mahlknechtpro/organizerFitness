@@ -20,31 +20,32 @@
             <fa:FontAwesome Icon="Spinner" FontSize="20" />
         </Button>
 
-
-        <DataGrid x:Name="grdClients" Grid.Row="1" ItemsSource="{Binding }">
-            <DataGrid.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="Change data" Click="ChangeData_Click" />
-                    <MenuItem Header="Insert values" Click="InsertValues_Click" />
-                    <MenuItem Header="Contract" Click="NewContract_Click"/>
-                    <Separator />
-                    <MenuItem Header="New Client" Click="NewClient_Click" />
-                    <MenuItem Header="Delete Client" Click="DeleteClient_Click" />
-                </ContextMenu>
-            </DataGrid.ContextMenu>
-            <DataGrid.ColumnHeaderStyle>
-                <Style TargetType="{x:Type DataGridColumnHeader}">
-                    <Setter Property="FontWeight" Value="Bold"/>
-                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    <Setter Property="FontSize" Value="23" />
-                </Style>
-            </DataGrid.ColumnHeaderStyle>
-            <DataGrid.RowStyle>
-                <Style TargetType="{x:Type DataGridRow}">
-                    <Setter Property="FontSize" Value="14" />
-                </Style>
-            </DataGrid.RowStyle>
-        </DataGrid>
+        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" CanContentScroll="True">
+            <DataGrid x:Name="grdClients" Grid.Row="1" ItemsSource="{Binding }">
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Change data" Click="ChangeData_Click" />
+                        <MenuItem Header="Insert values" Click="InsertValues_Click" />
+                        <MenuItem Header="Contract" Click="NewContract_Click"/>
+                        <Separator />
+                        <MenuItem Header="New Client" Click="NewClient_Click" />
+                        <MenuItem Header="Delete Client" Click="DeleteClient_Click" />
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="FontSize" Value="23" />
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.RowStyle>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <Setter Property="FontSize" Value="14" />
+                    </Style>
+                </DataGrid.RowStyle>
+            </DataGrid>
+        </ScrollViewer>
     </Grid>
 </UserControl>
