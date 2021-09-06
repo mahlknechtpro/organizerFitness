@@ -104,7 +104,7 @@ namespace organizerFitness.Views
             DataTable dt = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
             da.Fill(dt);
-            grdClients.DataContext = da;
+            grdClients.DataContext = dt;
 
 
             //Close Database
