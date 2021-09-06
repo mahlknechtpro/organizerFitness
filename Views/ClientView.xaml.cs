@@ -82,8 +82,10 @@ namespace organizerFitness.Views
                 "SslMode=none;";
 
             string cmdString;
-            cmdString = "SELECT cid AS Nummer, c_lastname AS Nachname, c_name AS Vorname, DATE_FORMAT(c_birth, '%d-%m-%Y') AS Geburtstag, c_height AS Gewicht," +
-                " c_startweight AS Startgewicht, c_codfisc AS Steuernr, c_pay AS Bezahlung, c_phone AS Handynr, c_email AS Mail FROM t_clients";
+            cmdString = "SELECT tcl.cid AS Nummer, tcl.c_lastname AS Nachname, tcl.c_name AS Vorname, DATE_FORMAT(tcl.c_birth, '%d-%m-%Y') AS Geburtstag, tcl.c_height AS Gewicht," +
+                        "tcl.c_startweight AS Startgewicht, tcl.c_codfisc AS Steuernr, tcl.c_pay AS Bezahlung, tcl.c_phone AS Handynr, tcl.c_email AS Mail, tco.co_active AS Aktiv," +
+                        "tco.co_begin AS Beginn, tco.co_duration AS Dauer, tco.co_end AS Ende, tco.co_paid as Bezahlt" +
+                        "FROM t_clients AS tcl INNER JOIN t_contracts AS tco ON tcl.cid = tco.co_number";
 
             MySqlConnection connection = new MySqlConnection(MyConString);
             MySqlCommand cmdSel = new MySqlCommand(cmdString, connection);

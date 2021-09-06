@@ -19,6 +19,9 @@
             <ComboBoxItem>12 months</ComboBoxItem>
         </ComboBox>
 
+        <Label Content="Paid:" Margin="10,110,0,0"></Label>
+        <CheckBox x:Name="cb_paid" IsChecked="False" Margin="20,130,0,0"></CheckBox>
+
         <Label Content="Begin date" Height="25" Width="75" HorizontalAlignment="Left"  VerticalAlignment="Top" VerticalContentAlignment="Center" Margin="120,10,0,0" />
         <Calendar x:Name="cal_beginContract" Margin="120,35,0,0" BorderThickness="2" SelectionMode="SingleDate" SelectedDate="{x:Static sys:DateTime.Now}" ></Calendar>
 

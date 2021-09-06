@@ -151,7 +151,7 @@ namespace organizerFitness
             }
         }
 
-        public void InsertNewContract(string clientNr, string conStart, string conEnd, int length)
+        public void InsertNewContract(string clientNr, string conStart, string conEnd, int length, string paid)
         {
             Console.WriteLine("New Contract- Data: "+ clientNr +" " + conStart + " " + length + " " + conEnd);
 
@@ -161,8 +161,8 @@ namespace organizerFitness
 
 
             //Insert new contract for client
-            string query = "INSERT INTO t_contracts(`co_number`,`co_begin`,`co_end`,`co_active`,`co_duration`) " +
-                "VALUES ('" + clientNr + "','" + conStart + "','" + conEnd + "', 1,'" + length + "');" ;
+            string query = "INSERT INTO t_contracts(`co_number`,`co_begin`,`co_end`,`co_active`,`co_duration`,`co_paid`) " +
+                "VALUES ('" + clientNr + "','" + conStart + "','" + conEnd + "', 1,'" + length + "','" + paid + "');";
             Console.WriteLine("Test: " + query);
 
             if (this.OpenConnection() == true)

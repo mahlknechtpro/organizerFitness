@@ -40,6 +40,7 @@ namespace organizerFitness.forms
             int dayEnd;
             string conStart;
             string conEnd;
+            string paid;
 
             clientNr = txtb_clientnr.Text;
             conLength = cmb_lengthcontract.SelectedItem.ToString().Remove(0,38);
@@ -86,11 +87,24 @@ namespace organizerFitness.forms
 
             conEnd = year + "-" + month + "-" + day;
 
+            //Auslesen ob der Kunde bezahlt hat oder nicht
+            if (cb_paid.IsChecked == true)
+                paid = "Yes";
+
+            else
+                paid = "No";
+
+
 
             Console.WriteLine("conStart: " + conStart + " Länge: " + length);
             Console.WriteLine("conEnd: " + conEnd);
 
-            db.InsertNewContract(clientNr, conStart, conEnd, length);
+
+
+            db.InsertNewContract(clientNr, conStart, conEnd, length, paid);
+
+            
+            this.Close();
 
         }
 
