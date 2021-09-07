@@ -108,6 +108,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="class\LogWriter.cs" />
     <Compile Include="forms\NewClientScreen.xaml.cs">
       <DependentUpon>NewClientScreen.xaml</DependentUpon>
     </Compile>

@@ -6,6 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using MySql.Data.MySqlClient;
+using organizerFitness.forms;
+using organizerFitness.Views;
+using organizerFitness.Viewmodels;
+using System.Data;
 
 namespace organizerFitness
 {
@@ -108,7 +112,8 @@ namespace organizerFitness
                 }
                 else
                 {
-                    if(username=="pm" && pwd == "1234")
+                    //User pm Pwd 1234 for technician
+                    if (username=="pm" && pwd == "1234")
                     {
                         forms.mainScreen mainScreen = new forms.mainScreen();
                         mainScreen.Show();
@@ -129,13 +134,10 @@ namespace organizerFitness
         //Insert NewClient
         public void InsertNewClient(string firstname, string lastname, string birthdate, string phone, string email, string codfisc, string payment, string height, string weight)
         {
-            //INSERT INTO `db_organizerFitness`.`t_clients`
-            //(`c_name`,`c_lastname`,`c_birth`,`c_height`,`c_startweight`,`c_codfisc`,`c_pay`,`c_phone`,`c_email`)
-            //VALUES('Juliana','Entacher','1993-11-16',48.5,52.8,'NTCJLN93G16B152J','Kreditkarte','+393664244643','julianaentacher@hotmail.com');
             string query = "INSERT INTO t_clients(`c_name`,`c_lastname`,`c_birth`,`c_height`,`c_startweight`,`c_codfisc`,`c_pay`,`c_phone`,`c_email`)" +
                 "VALUES('"+ firstname + "','" + lastname + "','" + birthdate + "','" + height + "','" + weight + "','" + codfisc + "','" + payment + "','" + phone + "','" + email + "')";
 
-            Console.WriteLine("Test: " + query);
+            
 
             if (this.OpenConnection() == true)
             {
@@ -178,37 +180,6 @@ namespace organizerFitness
 
             }
 
-        }
-
-        //Insert statement
-        public void Insert()
-        {
-        }
-
-        //Update statement
-        public void Update()
-        {
-        }
-
-        //Delete statement
-        public void Delete()
-        {
-        }
-
-        //Count statement
-        public int Count()
-        {
-            return 0;
-        }
-
-        //Backup
-        public void Backup()
-        {
-        }
-
-        //Restore
-        public void Restore()
-        {
         }
     }
 }

@@ -38,8 +38,10 @@ namespace organizerFitness
             Console.WriteLine("Username: " + username);
             Console.WriteLine("Password: " + pwd);
 
+            //Start function USERCONNECTION
             DB.UserConnection(username, pwd);
 
+            //Opened windows get closed
             this.Close();
 
         }

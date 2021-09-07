@@ -30,35 +30,46 @@ namespace organizerFitness.Views
         {
             InitializeComponent();
 
+            //SELECT - STATEMENT executed and showed in the datagrid
             fillDataGrid();
         }
 
+        #region NewClient_context
         public void NewClient_Click(object sender, RoutedEventArgs e)
         {
+            //Windows for new client will be opened
             forms.NewClient newClientScreen = new forms.NewClient();
             newClientScreen.Show();
         }
+        #endregion
 
+        #region InsertValues_context
         private void InsertValues_Click(object sender, RoutedEventArgs e)
         {
 
         }
+        #endregion
 
+        #region ClientDataChange_Context
         private void ChangeData_Click(object sender, RoutedEventArgs e)
         {
 
         }
+        #endregion
 
+        #region DeleteClient_context
         private void DeleteClient_Click(object sender, RoutedEventArgs e)
         {
 
         }
+        #endregion
 
         private void SearchData_Click(object sender, RoutedEventArgs e)
         {
             searchData();
         }
 
+        #region Reload_Button
         private void ReloadData_Click(object sender, RoutedEventArgs e)
         {
             fillDataGrid();
@@ -68,6 +79,7 @@ namespace organizerFitness.Views
                 txtb_search.Text = "";
             }
         }
+        #endregion
 
         private void fillDataGrid()
         {
@@ -86,7 +98,7 @@ namespace organizerFitness.Views
                         + "     ,  tcl.c_lastname AS Nachname"
                         + "     ,  tcl.c_name AS Vorname"
                         + "     ,  DATE_FORMAT(tcl.c_birth, '%d-%m-%Y') AS Geburtstag"
-                        + "     , tcl.c_height AS Gewicht"
+                        + "     ,  tcl.c_height AS Gewicht"
                         + "     ,  tcl.c_startweight AS Startgewicht"
                         + "     ,  tcl.c_codfisc AS Steuernr"
                         + "     ,  tcl.c_pay AS Bezahlung"
@@ -118,7 +130,6 @@ namespace organizerFitness.Views
 
         private void NewContract_Click(object sender, RoutedEventArgs e)
         {
-            //int clientNr = 0;
 
             forms.newContract newContractWindow = new forms.newContract();
             newContractWindow.Show();
@@ -126,6 +137,11 @@ namespace organizerFitness.Views
         }
 
         private void ClientSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            searchData();
+        }
+
+        private void ClientSearch_KeyUp(object sender, KeyEventArgs e)
         {
             searchData();
         }
@@ -165,9 +181,6 @@ namespace organizerFitness.Views
             DB.CloseConnection();
         }
 
-        private void ClientSearch_KeyUp(object sender, KeyEventArgs e)
-        {
-            searchData();
-        }
+        
     }
 }
