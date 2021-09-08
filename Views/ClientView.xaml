@@ -11,7 +11,8 @@
             <RowDefinition Height="30"/>
             <RowDefinition />
         </Grid.RowDefinitions>
-
+        
+        <!-- Toolbar -->
         <TextBox x:Name="txtb_search" HorizontalAlignment="Right" VerticalAlignment="Center" Width="120" Margin="0,0,65,0" KeyDown="ClientSearch_KeyDown" KeyUp="ClientSearch_KeyUp"></TextBox>
         <Button ToolTip="Search" HorizontalAlignment="Right" Grid.Row="0" Height="25" Width="25" Margin="0,0,30,0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent" Click="SearchData_Click">
             <fa:FontAwesome Icon="Search" FontSize="20" />
@@ -19,6 +20,7 @@
         <Button ToolTip="Reload" HorizontalAlignment="Right" Grid.Row="0" Height="25" Width="25" Margin="0,0,5,0" BorderBrush="Transparent" BorderThickness="0" Background="Transparent" Click="ReloadData_Click">
             <fa:FontAwesome Icon="Spinner" FontSize="20" />
         </Button>
+        <CheckBox Content="with Contract" HorizontalAlignment="Left" Grid.Row="0" VerticalAlignment="Center" Margin="10,0,0,0" x:Name="chb_withContract" Click="ClientContract_Click"></CheckBox>
 
   
             <DataGrid x:Name="grdClients" Grid.Row="1" ItemsSource="{Binding }">

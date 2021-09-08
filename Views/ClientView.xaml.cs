@@ -31,7 +31,7 @@ namespace organizerFitness.Views
             InitializeComponent();
 
             //SELECT - STATEMENT executed and showed in the datagrid
-            fillDataGrid();
+            fillDataGridAllClients();
         }
 
         #region NewClient_context
@@ -72,7 +72,7 @@ namespace organizerFitness.Views
         #region Reload_Button
         private void ReloadData_Click(object sender, RoutedEventArgs e)
         {
-            fillDataGrid();
+            fillDataGridAllClients();
 
             if (txtb_search.Text != "")
             {
@@ -113,6 +113,45 @@ namespace organizerFitness.Views
                         + " INNER"
                         + "  JOIN t_contracts    AS tco"
                         + "    ON tcl.cid = tco.co_number"
+                        + ";"
+            );
+
+            MySqlConnection connection = new MySqlConnection(MyConString);
+            MySqlCommand cmdSel = new MySqlCommand(cmdString, connection);
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
+            da.Fill(dt);
+            grdClients.DataContext = dt;
+
+
+            //Close Database
+            DB.CloseConnection();
+        }
+
+        private void fillDataGridAllClients()
+        {
+            //Open Database
+            DB.OpenConnection();
+
+            string MyConString =
+                "SERVER=mimasrv2.ddns.net;" +
+                "DATABASE=db_organizerFitness;" +
+                "UID=mima;" +
+                "PASSWORD=mima_10492;" +
+                "SslMode=none;";
+
+            string cmdString;
+            cmdString = ("SELECT  tcl.cid AS Nummer"
+                        + "     ,  tcl.c_lastname AS Nachname"
+                        + "     ,  tcl.c_name AS Vorname"
+                        + "     ,  DATE_FORMAT(tcl.c_birth, '%d-%m-%Y') AS Geburtstag"
+                        + "     ,  tcl.c_height AS Gewicht"
+                        + "     ,  tcl.c_startweight AS Startgewicht"
+                        + "     ,  tcl.c_codfisc AS Steuernr"
+                        + "     ,  tcl.c_pay AS Bezahlung"
+                        + "     ,  tcl.c_phone AS Handynr"
+                        + "     ,  tcl.c_email AS Mail"
+                        + "  FROM t_clients AS tcl"
                         + ";"
             );
 
@@ -181,6 +220,18 @@ namespace organizerFitness.Views
             DB.CloseConnection();
         }
 
-        
+        private void ClientContract_Click(object sender, RoutedEventArgs e)
+        {
+            if(chb_withContract.IsChecked == true)
+            {
+                fillDataGrid();
+                //MessageBox.Show("Checked");
+            }
+            else
+            {
+                fillDataGridAllClients();
+                //MessageBox.Show("Unchecked");
+            }
+        }
     }
 }
