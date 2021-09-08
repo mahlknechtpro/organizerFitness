@@ -244,8 +244,6 @@ namespace organizerFitness.Views
             string cellValue = dataRow.Row.ItemArray[0].ToString();
 
             noticeClient = DB.getNotice(cellValue, notice);
-
-            MessageBox.Show("Test: " + DB.getNotice(cellValue, notice));
         }
     }
 }

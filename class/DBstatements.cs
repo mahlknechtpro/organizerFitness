@@ -186,6 +186,7 @@ namespace organizerFitness
         {
 
             string query = "SELECT c_notice FROM t_clients WHERE cid ='" + index +"'";
+            string user_notice;
 
             //Open Connection
             if (this.OpenConnection() == true)
@@ -193,8 +194,22 @@ namespace organizerFitness
                 //Create Mysql Command
                 MySqlCommand cmd = new MySqlCommand(query, this.connection);
 
+                //ExecuteScalar will return one value
+                user_notice = cmd.ExecuteScalar().ToString();
+
+                //close Connection
+                this.CloseConnection();
+
+                if(user_notice != null)
+                {
+                    //string noticeClient;
+
+                    forms.userNotice userNotice = new forms.userNotice(user_notice, index);
+                    userNotice.Show();
+                }
+
             }
-                notice = "HAHAH xD";
+                
             return notice;
         }
     }

@@ -115,6 +115,9 @@
     <Compile Include="forms\newContract.xaml.cs">
       <DependentUpon>newContract.xaml</DependentUpon>
     </Compile>
+    <Compile Include="forms\userNotice.xaml.cs">
+      <DependentUpon>userNotice.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Viewmodels\ClientViewModel.cs" />
     <Compile Include="Viewmodels\MainViewModel.cs" />
     <Compile Include="Viewmodels\SettingsViewModel.cs" />
@@ -136,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="forms\newContract.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="forms\userNotice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
