@@ -32,6 +32,7 @@
                         <Separator />
                         <MenuItem Header="New Client" Click="NewClient_Click" />
                         <MenuItem Header="Delete Client" Click="DeleteClient_Click" />
+                        <MenuItem Header="Get notice" Click="GetNotice_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
                 <DataGrid.ColumnHeaderStyle>

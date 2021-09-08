@@ -233,5 +233,19 @@ namespace organizerFitness.Views
                 //MessageBox.Show("Unchecked");
             }
         }
+
+        private void GetNotice_Click(object sender, RoutedEventArgs e)
+        {
+            string notice = "";
+            string noticeClient;
+
+            //Get Index (ClientNr)
+            DataRowView dataRow = (DataRowView)grdClients.SelectedItem;
+            string cellValue = dataRow.Row.ItemArray[0].ToString();
+
+            noticeClient = DB.getNotice(cellValue, notice);
+
+            MessageBox.Show("Test: " + DB.getNotice(cellValue, notice));
+        }
     }
 }

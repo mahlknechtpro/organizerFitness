@@ -132,10 +132,10 @@ namespace organizerFitness
         }
 
         //Insert NewClient
-        public void InsertNewClient(string firstname, string lastname, string birthdate, string phone, string email, string codfisc, string payment, string height, string weight)
+        public void InsertNewClient(string firstname, string lastname, string birthdate, string phone, string email, string codfisc, string payment, string height, string weight, string notice)
         {
-            string query = "INSERT INTO t_clients(`c_name`,`c_lastname`,`c_birth`,`c_height`,`c_startweight`,`c_codfisc`,`c_pay`,`c_phone`,`c_email`)" +
-                "VALUES('"+ firstname + "','" + lastname + "','" + birthdate + "','" + height + "','" + weight + "','" + codfisc + "','" + payment + "','" + phone + "','" + email + "')";
+            string query = "INSERT INTO t_clients(`c_name`,`c_lastname`,`c_birth`,`c_height`,`c_startweight`,`c_codfisc`,`c_pay`,`c_phone`,`c_email`,`c_notice`)" +
+                "VALUES('"+ firstname + "','" + lastname + "','" + birthdate + "','" + height + "','" + weight + "','" + codfisc + "','" + payment + "','" + phone + "','" + email + "','" + notice + "')";
 
             
 
@@ -180,6 +180,22 @@ namespace organizerFitness
 
             }
 
+        }
+
+        public string getNotice(string index, string notice)
+        {
+
+            string query = "SELECT c_notice FROM t_clients WHERE cid ='" + index +"'";
+
+            //Open Connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Mysql Command
+                MySqlCommand cmd = new MySqlCommand(query, this.connection);
+
+            }
+                notice = "HAHAH xD";
+            return notice;
         }
     }
 }

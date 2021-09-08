@@ -45,13 +45,14 @@ namespace organizerFitness.forms
             string height = txtb_height.Text;
             string weight = txtb_weight.Text;
             string birthdate;
+            string notice = txtblo_notice.Text;
 
             birthdate = birth_year + "-" + birth_month + "-" + birth_day;
 
             height = height.Replace(',', '.');
             weight = weight.Replace(',', '.');
 
-            DB.InsertNewClient(firstname,lastname,birthdate,phone,email,codfisc,payment,height,weight);
+            DB.InsertNewClient(firstname,lastname,birthdate,phone,email,codfisc,payment,height,weight,notice);
             //(string firstname, string lastname, string birthdate, string phone, string email, string codfisc, string payment, string height, string weight)
         }
     }

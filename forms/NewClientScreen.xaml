@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:organizerFitness.forms"
         mc:Ignorable="d"
-        Title="NewClient" Height="300" Width="650">
+        Title="NewClient" Height="400" Width="650">
     <Grid>
         <Grid.ColumnDefinitions>
             
@@ -52,6 +52,9 @@
         <Label Margin="120,170,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Startweight</Label>
         <TextBox Margin="130,190,0,0" Width="40" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_weight"></TextBox>
 
+        <Label Margin="20,220,0,0" Content="Notiz"></Label>
+        <TextBox Margin="30,240,0,0" Height="90" Width="600" HorizontalAlignment="Left" x:Name="txtblo_notice"></TextBox>
+        
         <!--Speichern - Schließen-->
         <Button Grid.Row="2" Height="20" Width="70" HorizontalAlignment="Right" Margin="0,0,10,0" Click="btn_newClient_close">Close</Button>
         <Button Grid.Row="2" Height="20" Width="70" HorizontalAlignment="Right" Margin="0,0,90,0" Click="btn_newClient_save">Save</Button>
