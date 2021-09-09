@@ -9,7 +9,7 @@
         Title="New contract" Height="300" Width="350">
     <Grid>
         <Label Content="Client-Nr." Height="25" Width="75" VerticalContentAlignment="Center" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,10,0,0" />
-        <TextBox x:Name="txtb_clientnr" Height="25" Width="75" HorizontalAlignment="Left"  VerticalAlignment="Top" VerticalContentAlignment="Center" Margin="20,30,0,0" ></TextBox>
+        <TextBox x:Name="txtb_clientnr" Height="25" Width="75" HorizontalAlignment="Left"  VerticalAlignment="Top" VerticalContentAlignment="Center" Margin="20,30,0,0" IsReadOnly="True"  ></TextBox>
 
         <Label Content="Contract length" Height="25" Width="100" HorizontalAlignment="Left"  VerticalAlignment="Top" VerticalContentAlignment="Center" Margin="10,60,0,0" />
         <ComboBox x:Name="cmb_lengthcontract"  Height="25" Width="80" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="20,80,0,0">

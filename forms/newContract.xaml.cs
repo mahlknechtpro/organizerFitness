@@ -19,9 +19,11 @@ namespace organizerFitness.forms
     /// </summary>
     public partial class newContract : Window
     {
-        public newContract()
+        public newContract(string clientID)
         {
             InitializeComponent();
+
+            txtb_clientnr.Text = clientID;
         }
 
         private void btn_saveContract(object sender, RoutedEventArgs e)

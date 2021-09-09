@@ -169,8 +169,12 @@ namespace organizerFitness.Views
 
         private void NewContract_Click(object sender, RoutedEventArgs e)
         {
+            //Get Index (ClientNr)
+            DataRowView dataRow = (DataRowView)grdClients.SelectedItem;
+            string cellValue = dataRow.Row.ItemArray[0].ToString();
 
-            forms.newContract newContractWindow = new forms.newContract();
+
+            forms.newContract newContractWindow = new forms.newContract(cellValue);
             newContractWindow.Show();
             
         }
