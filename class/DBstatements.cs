@@ -212,5 +212,24 @@ namespace organizerFitness
                 
             return notice;
         }
+
+        public void setNotice(string noticeClient, string clientID)
+        {
+            //Insert new contract for client
+            string query = "UPDATE t_clients SET c_notice = '" + noticeClient + "' WHERE cid = '" + clientID + "';";
+
+            Console.WriteLine("Test Query: " + query);
+
+            if (this.OpenConnection() == true)
+            {
+                //Create Mysql Command
+                MySqlCommand cmd = new MySqlCommand(query, this.connection);
+
+                MySqlDataReader MyReader = cmd.ExecuteReader();
+
+                this.CloseConnection();
+
+            }
+        }
     }
 }

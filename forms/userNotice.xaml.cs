@@ -20,12 +20,6 @@ namespace organizerFitness.forms
     public partial class userNotice : Window
     {
 
-        //in DBstatements auslagern
-        public void setNotice (string noticeClient)
-        {
-
-        }
-
         public userNotice(string noticeClient, string clientNumber)
         {
             InitializeComponent();
@@ -44,7 +38,9 @@ namespace organizerFitness.forms
         {
             string rtb_noticeClient = new TextRange(rtb_notice.Document.ContentStart, rtb_notice.Document.ContentEnd).Text;
 
-            setNotice(rtb_noticeClient);
+
+            DBstatements DB = new DBstatements();
+            DB.setNotice(rtb_noticeClient, lbl_nr.Content.ToString());
         }
     }
 }

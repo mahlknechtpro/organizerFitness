@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <RichTextBox x:Name="rtb_notice" Block.LineHeight="1"></RichTextBox>
-        <Label x:Name="lbl_nr"></Label>
+        <Label x:Name="lbl_nr" Visibility="Hidden" ></Label>
 
         <!--Speichern - Schließen-->
         <Button Grid.Row="2" Height="20" Width="70" HorizontalAlignment="Right" Margin="0,0,10,0" Click="btn_notice_close">Close</Button>
