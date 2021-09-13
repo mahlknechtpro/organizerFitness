@@ -157,20 +157,40 @@ namespace organizerFitness
         {
             Console.WriteLine("New Contract- Data: "+ clientNr +" " + conStart + " " + length + " " + conEnd);
 
+            string querySearchContract = "SELECT COUNT(*) FROM t_contracts WHERE co_active = 1 AND co_number = " + clientNr + ";";
+
             //Check if contract already exists
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(querySearchContract, this.connection);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                Console.WriteLine("Count: " + count);
+
+                if (count == 1)
+                {
+                    string querySetNullActive = "UPDATE t_contracts SET co_active = 0 WHERE co_number = '" + clientNr + "';";
+
+                    MySqlCommand cmdSetNull = new MySqlCommand(querySetNullActive, this.connection);
+
+                    MySqlDataReader MyReader2 = cmdSetNull.ExecuteReader();
+                }
+            }
+
 
             //If yes put flag co_active on 0
 
 
             //Insert new contract for client
-            string query = "INSERT INTO t_contracts(`co_number`,`co_begin`,`co_end`,`co_active`,`co_duration`,`co_paid`) " +
+            string queryNewContract = "INSERT INTO t_contracts(`co_number`,`co_begin`,`co_end`,`co_active`,`co_duration`,`co_paid`) " +
                 "VALUES ('" + clientNr + "','" + conStart + "','" + conEnd + "', 1,'" + length + "','" + paid + "');";
-            Console.WriteLine("Test: " + query);
+            Console.WriteLine("Test: " + queryNewContract);
 
             if (this.OpenConnection() == true)
             {
                 //Create Mysql Command
-                MySqlCommand cmd = new MySqlCommand(query, this.connection);
+                MySqlCommand cmd = new MySqlCommand(queryNewContract, this.connection);
 
                 MySqlDataReader MyReader2 = cmd.ExecuteReader();
 
