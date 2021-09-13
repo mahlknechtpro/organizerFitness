@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using Tulpep.NotificationWindow;
 
 namespace organizerFitness.forms
 {
@@ -38,6 +39,16 @@ namespace organizerFitness.forms
             mainScreen.App = this;
 
             SwitchPage(new MainViewModel());
+
+            //Check Contracts
+            //Pop-Up
+            PopupNotifier popupContract = new PopupNotifier();
+            popupContract.Image = Properties.Resources.mail;
+            popupContract.TitleText = "Vertrag bald zu Ende";
+            popupContract.ContentText = "Bei diesen Kunden wird der Vertrag auslaufen";
+            popupContract.Popup();
+
+            //Mail
         }
         private void startclock()
         {

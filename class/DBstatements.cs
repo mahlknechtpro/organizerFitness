@@ -168,6 +168,7 @@ namespace organizerFitness
 
                 Console.WriteLine("Count: " + count);
 
+                //If yes put flag co_active on 0
                 if (count == 1)
                 {
                     string querySetNullActive = "UPDATE t_contracts SET co_active = 0 WHERE co_number = '" + clientNr + "';";
@@ -177,10 +178,6 @@ namespace organizerFitness
                     MySqlDataReader MyReader2 = cmdSetNull.ExecuteReader();
                 }
             }
-
-
-            //If yes put flag co_active on 0
-
 
             //Insert new contract for client
             string queryNewContract = "INSERT INTO t_contracts(`co_number`,`co_begin`,`co_end`,`co_active`,`co_duration`,`co_paid`) " +
