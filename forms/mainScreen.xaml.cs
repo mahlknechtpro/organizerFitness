@@ -41,6 +41,9 @@ namespace organizerFitness.forms
             SwitchPage(new MainViewModel());
 
             //Check Contracts
+            DBstatements db = new DBstatements();
+            db.getFinishContract();
+
             //Pop-Up
             PopupNotifier popupContract = new PopupNotifier();
             popupContract.Image = Properties.Resources.mail;

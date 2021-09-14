@@ -248,5 +248,26 @@ namespace organizerFitness
 
             }
         }
+
+        public void getFinishContract()
+        {
+            //Show Contracts
+            //string dateContract = DateTime.Now.ToString("dd/MM/yyyy");
+            /*string getQuery = "SELECT DATE_ADD(co_end, INTERVAL 10 DAY), co_number FROM t_contracts WHERE co_active = 1;";
+            
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(getQuery, this.connection);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Console.WriteLine("{0} {1} {2}", rdr.GetInt32(0), rdr.GetString(1),
+                            rdr.GetInt32(2));
+                }
+            }*/
+
+            //Console.WriteLine("Date: " + dateContract);
+        }
     }
 }
