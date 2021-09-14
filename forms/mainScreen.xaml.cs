@@ -44,12 +44,7 @@ namespace organizerFitness.forms
             DBstatements db = new DBstatements();
             db.getFinishContract();
 
-            //Pop-Up
-            PopupNotifier popupContract = new PopupNotifier();
-            popupContract.Image = Properties.Resources.mail;
-            popupContract.TitleText = "Vertrag bald zu Ende";
-            popupContract.ContentText = "Bei diesen Kunden wird der Vertrag auslaufen";
-            popupContract.Popup();
+            
 
             //Mail
         }

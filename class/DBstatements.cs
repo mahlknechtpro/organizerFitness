@@ -10,6 +10,7 @@ using organizerFitness.forms;
 using organizerFitness.Views;
 using organizerFitness.Viewmodels;
 using System.Data;
+using Tulpep.NotificationWindow;
 
 namespace organizerFitness
 {
@@ -252,20 +253,34 @@ namespace organizerFitness
         public void getFinishContract()
         {
             //Show Contracts
-            //string dateContract = DateTime.Now.ToString("dd/MM/yyyy");
-            /*string getQuery = "SELECT DATE_ADD(co_end, INTERVAL 10 DAY), co_number FROM t_contracts WHERE co_active = 1;";
-            
             if (this.OpenConnection() == true)
             {
+                DateTime dateTime = DateTime.UtcNow.Date;
+                string getQuery = "SELECT DATE_FORMAT(DATE_SUB(tco.co_end, INTERVAL 7 DAY), '%d.%m.%Y'), " +
+                                      "tco.co_number, " +
+                                      "tcl.c_name, " +
+                                      "tcl.c_lastname " +
+                                      "FROM t_contracts as tco " +
+                                      "INNER JOIN t_clients as tcl " +
+                                      "ON tcl.cid = tco.co_number " +
+                                      "Where tco.co_active = 1;";
+                
                 MySqlCommand cmd = new MySqlCommand(getQuery, this.connection);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
                 while (rdr.Read())
                 {
-                    Console.WriteLine("{0} {1} {2}", rdr.GetInt32(0), rdr.GetString(1),
-                            rdr.GetInt32(2));
+                    if (rdr.GetString(0) == dateTime.ToString("dd/MM/yyyy"))
+                    {
+                        PopupNotifier popup = new PopupNotifier();
+                        popup.Image = Properties.Resources.mail;
+                        popup.TitleText = "Contract is ending!";
+                        popup.ContentText = "The contract of " + rdr.GetString(3) + " " + rdr.GetString(2) + " ends in 7 days (" + rdr.GetString(0) + ")!";
+                        popup.Popup();
+                    }
+
                 }
-            }*/
+            }
 
             //Console.WriteLine("Date: " + dateContract);
         }
