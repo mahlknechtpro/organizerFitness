@@ -17,6 +17,8 @@
         
         <!--Textboxes and Labels for values-->
         
+        
+        
         <Button Height="20" Width="75" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,100,0" Content="Save" Click="SaveSettings_Click"></Button>
         <Button Height="20" Width="75" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,10,0" Content="Cancel" Click="ReturnSettings_Click"></Button>
     </Grid>
