@@ -113,6 +113,7 @@ namespace organizerFitness.Views
                         + " INNER"
                         + "  JOIN t_contracts    AS tco"
                         + "    ON tcl.cid = tco.co_number"
+                        + " WHERE tco.co_active = 1"
                         + ";"
             );
 
