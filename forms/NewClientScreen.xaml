@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:organizerFitness.forms"
         mc:Ignorable="d"
-        Title="NewClient" Height="400" Width="650">
+        Title="New Client" Height="400" Width="650">
     <Grid>
         <Grid.ColumnDefinitions>
             

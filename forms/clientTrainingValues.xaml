@@ -16,10 +16,34 @@
         </Grid.RowDefinitions>
         
         <!--Textboxes and Labels for values-->
-        
-        
-        
-        <Button Height="20" Width="75" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,100,0" Content="Save" Click="SaveSettings_Click"></Button>
-        <Button Height="20" Width="75" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,10,0" Content="Cancel" Click="ReturnSettings_Click"></Button>
+        <Label Margin="20,0,0,0" FontWeight="ExtraBold" Width="115" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Body dimensions</Label>
+
+        <Label Margin="20,30,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Arm</Label>
+        <Label Margin="80,50,0,0" Width="30" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">cm</Label>
+        <TextBox Margin="30,50,0,0" Width="50" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_arm"></TextBox>
+
+        <Label Margin="130,30,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Chest</Label>
+        <Label Margin="190,50,0,0" Width="30" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">cm</Label>
+        <TextBox Margin="140,50,0,0" Width="50" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_chest"></TextBox>
+
+        <Label Margin="240,30,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Upper legs</Label>
+        <Label Margin="300,50,0,0" Width="30" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">cm</Label>
+        <TextBox Margin="250,50,0,0" Width="50" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_upperlegs"></TextBox>
+
+        <Label Margin="350,30,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Lower leg</Label>
+        <Label Margin="410,50,0,0" Width="30" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">cm</Label>
+        <TextBox Margin="360,50,0,0" Width="50" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_lowerlegs"></TextBox>
+
+        <Label Margin="460,30,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Stomach</Label>
+        <Label Margin="520,50,0,0" Width="30" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">cm</Label>
+        <TextBox Margin="470,50,0,0" Width="50" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_stomach"></TextBox>
+
+        <Label Margin="570,30,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Hips</Label>
+        <Label Margin="630,50,0,0" Width="30" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">cm</Label>
+        <TextBox Margin="580,50,0,0" Width="50" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_hips"></TextBox>
+
+        <!--Save and Cancel- Button-->            
+        <Button Height="20" Width="75" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,100,0" Content="Save" Click="SaveBody_Click"></Button>
+        <Button Height="20" Width="75" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,10,0" Content="Cancel" Click="ReturnBody_Click"></Button>
     </Grid>
 </Window>

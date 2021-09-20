@@ -23,5 +23,15 @@ namespace organizerFitness.forms
         {
             InitializeComponent();
         }
+
+        private void SaveBody_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ReturnBody_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
