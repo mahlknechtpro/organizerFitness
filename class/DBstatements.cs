@@ -284,5 +284,15 @@ namespace organizerFitness
 
             //Console.WriteLine("Date: " + dateContract);
         }
+
+        public void getBodyValues(string clientNr)
+        {
+            //Show Contracts
+            if (this.OpenConnection() == true)
+            {
+                //ex.: SELECT v_cid, v_date, v_arm, v_chest, v_leg, v_calves, v_stomach, v_hips, v_muscle, v_fat, v_calories, v_weight FROM t_cvalues WHERE v_cid = 1 AND vid = (SELECT MAX(vid) FROM t_cvalues WHERE v_cid = 1);
+
+            }
+        }
     }
 }

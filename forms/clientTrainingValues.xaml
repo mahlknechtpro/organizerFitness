@@ -30,7 +30,7 @@
         <Label Margin="300,50,0,0" Width="30" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">cm</Label>
         <TextBox Margin="250,50,0,0" Width="50" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_upperlegs"></TextBox>
 
-        <Label Margin="350,30,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Lower leg</Label>
+        <Label Margin="350,30,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Calves</Label>
         <Label Margin="410,50,0,0" Width="30" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">cm</Label>
         <TextBox Margin="360,50,0,0" Width="50" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_lowerlegs"></TextBox>
 
@@ -54,6 +54,10 @@
         <Label Margin="240,110,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Calories</Label>
         <Label Margin="300,130,0,0" Width="30" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">kcal</Label>
         <TextBox Margin="250,130,0,0" Width="50" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_calories"></TextBox>
+
+        <Label Margin="350,110,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Weight</Label>
+        <Label Margin="410,130,0,0" Width="30" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">kg</Label>
+        <TextBox Margin="360,130,0,0" Width="50" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_weight"></TextBox>
 
         <Label Height="20" Width="Auto" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="lbl_lastSave"></Label>
         

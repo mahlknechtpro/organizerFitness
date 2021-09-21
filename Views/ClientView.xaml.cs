@@ -46,7 +46,12 @@ namespace organizerFitness.Views
         #region InsertValues_context
         private void InsertValues_Click(object sender, RoutedEventArgs e)
         {
+            //Get Index (ClientNr)
+            DataRowView dataRow = (DataRowView)grdClients.SelectedItem;
+            string cellValue = dataRow.Row.ItemArray[0].ToString();
 
+            forms.clientTrainingValues newContractWindow = new forms.clientTrainingValues(cellValue);
+            newContractWindow.Show();
         }
         #endregion
 

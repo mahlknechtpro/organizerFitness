@@ -19,19 +19,28 @@ namespace organizerFitness.forms
     /// </summary>
     public partial class clientTrainingValues : Window
     {
-        public clientTrainingValues()
+        public clientTrainingValues(string cellValue)
         {
             InitializeComponent();
+
+            //Kontrolle wann letzte Mal abgespeichert
+            //BSP: Last save: 21.09.2021
+            //Werte wieder in die Textbox einfügen
+
+            DBstatements db = new DBstatements();
+            db.getBodyValues(cellValue);
+
         }
 
         private void SaveBody_Click(object sender, RoutedEventArgs e)
         {
-
+            //Werte abspeichern
         }
 
         private void ReturnBody_Click(object sender, RoutedEventArgs e)
         {
-
+            //Window wird geschlossen
+            this.Close();
         }
     }
 }
