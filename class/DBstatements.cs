@@ -294,7 +294,7 @@ namespace organizerFitness
                 Console.WriteLine(clientNr[0]);
 
                 /*
-
+                Hinzufügen VFat
 
                 //ex.: SELECT v_cid, v_date, v_arm, v_chest, v_leg, v_calves, v_stomach,
                 //v_hips, v_muscle, v_fat, v_calories, v_weight FROM t_cvalues WHERE v_cid = 1 AND
@@ -309,6 +309,7 @@ namespace organizerFitness
                     "v_hips, " +
                     "v_muscle, " +
                     "v_fat, " +
+                    "v_vfat, " +
                     "v_calories, " +
                     "v_weight " +
                     "FROM t_cvalues " +
@@ -349,12 +350,15 @@ namespace organizerFitness
                 //Fett
                 Console.WriteLine(rdr.GetString(9));
                 string oldFat = rdr.GetString(9);
-                //Kalorien
+                //Fett
                 Console.WriteLine(rdr.GetString(10));
-                string oldCalories = rdr.GetString(10);
-                //Gewicht
+                string oldvFat = rdr.GetString(10);
+                //Kalorien
                 Console.WriteLine(rdr.GetString(11));
-                string oldWeight = rdr.GetString(11);
+                string oldCalories = rdr.GetString(11);
+                //Gewicht
+                Console.WriteLine(rdr.GetString(12));
+                string oldWeight = rdr.GetString(12);
 
                 //values = {oldDate, oldArm, oldChest, oldLeg, oldCalves, oldStomach, oldHips, oldMuscle, oldFat, oldCalories, oldWeight };
 
