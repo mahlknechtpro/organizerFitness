@@ -23,13 +23,16 @@ namespace organizerFitness.forms
         {
             InitializeComponent();
 
+            string values = "";
+
             //Kontrolle wann letzte Mal abgespeichert
             //BSP: Last save: 21.09.2021
             //Werte wieder in die Textbox einfügen
 
             DBstatements db = new DBstatements();
-            db.getBodyValues(cellValue);
+            db.GetBodyValues(cellValue);
 
+            Console.WriteLine(values);
         }
 
         private void SaveBody_Click(object sender, RoutedEventArgs e)

@@ -285,13 +285,80 @@ namespace organizerFitness
             //Console.WriteLine("Date: " + dateContract);
         }
 
-        public void getBodyValues(string clientNr)
+        public void GetBodyValues(string clientNr)
         {
             //Show Contracts
             if (this.OpenConnection() == true)
             {
-                //ex.: SELECT v_cid, v_date, v_arm, v_chest, v_leg, v_calves, v_stomach, v_hips, v_muscle, v_fat, v_calories, v_weight FROM t_cvalues WHERE v_cid = 1 AND vid = (SELECT MAX(vid) FROM t_cvalues WHERE v_cid = 1);
 
+                Console.WriteLine(clientNr[0]);
+
+                /*
+
+
+                //ex.: SELECT v_cid, v_date, v_arm, v_chest, v_leg, v_calves, v_stomach,
+                //v_hips, v_muscle, v_fat, v_calories, v_weight FROM t_cvalues WHERE v_cid = 1 AND
+                //vid = (SELECT MAX(vid) FROM t_cvalues WHERE v_cid = 1);
+                string query = "SELECT v_cid, " +
+                    "v_date, " +
+                    "v_arm, " +
+                    "v_chest, " +
+                    "v_leg, " +
+                    "v_calves, " +
+                    "v_stomach, " +
+                    "v_hips, " +
+                    "v_muscle, " +
+                    "v_fat, " +
+                    "v_calories, " +
+                    "v_weight " +
+                    "FROM t_cvalues " +
+                    "WHERE v_cid = " + clientNr + " AND " +
+                    "vid = (SELECT MAX(vid) FROM t_cvalues WHERE v_cid = " + clientNr + ");";
+
+                MySqlCommand cmd = new MySqlCommand(query, this.connection);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                rdr.Read();
+
+                //ClientNr
+                Console.WriteLine(rdr.GetString(0));
+                //Datum
+                Console.WriteLine(rdr.GetString(1));
+                string oldDate = rdr.GetString(1);
+                //Arm
+                Console.WriteLine(rdr.GetString(2));
+                string oldArm = rdr.GetString(2);
+                //Brust
+                Console.WriteLine(rdr.GetString(3));
+                string oldChest = rdr.GetString(3);
+                //Beine
+                Console.WriteLine(rdr.GetString(4));
+                string oldLeg = rdr.GetString(4);
+                //Unterschenkel
+                Console.WriteLine(rdr.GetString(5));
+                string oldCalves = rdr.GetString(5);
+                //Bauch
+                Console.WriteLine(rdr.GetString(6));
+                string oldStomach = rdr.GetString(6);
+                //Hüfte
+                Console.WriteLine(rdr.GetString(7));
+                string oldHips = rdr.GetString(7);
+                //Muskeln
+                Console.WriteLine(rdr.GetString(8));
+                string oldMuscle = rdr.GetString(8);
+                //Fett
+                Console.WriteLine(rdr.GetString(9));
+                string oldFat = rdr.GetString(9);
+                //Kalorien
+                Console.WriteLine(rdr.GetString(10));
+                string oldCalories = rdr.GetString(10);
+                //Gewicht
+                Console.WriteLine(rdr.GetString(11));
+                string oldWeight = rdr.GetString(11);
+
+                //values = {oldDate, oldArm, oldChest, oldLeg, oldCalves, oldStomach, oldHips, oldMuscle, oldFat, oldCalories, oldWeight };
+
+                */
             }
         }
     }
