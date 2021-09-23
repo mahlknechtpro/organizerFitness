@@ -11,6 +11,7 @@ using organizerFitness.Views;
 using organizerFitness.Viewmodels;
 using System.Data;
 using Tulpep.NotificationWindow;
+using organizerFitness.Models;
 
 namespace organizerFitness
 {
@@ -37,36 +38,36 @@ namespace organizerFitness
         //open connection to database
         public bool OpenConnection()
         {
-        try
-        {
-            MySqlConnectionStringBuilder connectionString = new MySqlConnectionStringBuilder();
-            connectionString.Server = "mimasrv2.ddns.net";
-            connectionString.Port = 3306;
-            connectionString.UserID = "mima";
-            connectionString.Password = "mima_10492";
-            connectionString.Database = "db_organizerFitness";
-            connectionString.SslMode = MySqlSslMode.None;
-
-
-            this.connection = new MySqlConnection(connectionString.ToString());
-            this.connection.Open();
-
-            return true;
-        }
-        catch (MySqlException ex)
-        {
-            switch (ex.Number)
+            try
             {
-                case 0:
-                   MessageBox.Show("Cannot connect to server.  Contact administrator");
-                   break;
-                case 1045:
-                    MessageBox.Show("Invalid username/password, please try again");
-                    break;
+                MySqlConnectionStringBuilder connectionString = new MySqlConnectionStringBuilder();
+                connectionString.Server = "mimasrv2.ddns.net";
+                connectionString.Port = 3306;
+                connectionString.UserID = "mima";
+                connectionString.Password = "mima_10492";
+                connectionString.Database = "db_organizerFitness";
+                connectionString.SslMode = MySqlSslMode.None;
+
+
+                this.connection = new MySqlConnection(connectionString.ToString());
+                this.connection.Open();
+
+                return true;
             }
-            return false;
+            catch (MySqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 0:
+                        MessageBox.Show("Cannot connect to server.  Contact administrator");
+                        break;
+                    case 1045:
+                        MessageBox.Show("Invalid username/password, please try again");
+                        break;
+                }
+                return false;
+            }
         }
-    }
 
         //Close connection
         public bool CloseConnection()
@@ -77,7 +78,7 @@ namespace organizerFitness
                 return true;
             }
             catch (MySqlException ex)
-{
+            {
                 MessageBox.Show(ex.Message);
                 return false;
             }
@@ -85,7 +86,13 @@ namespace organizerFitness
 
         public int UserConnection(string username, string pwd)
         {
-            string query = "SELECT Count(*) as user_count FROM t_user WHERE u_username = '" + username + "' && u_password = '" + pwd + "'";
+            string query = (
+                "SELECT Count(*) as user_count" 
+            +   "  FROM t_user" 
+            +   " WHERE u_username = '" + username + "'" 
+            +   "   AND u_password = '" + pwd + "'"
+            +   ";"
+            );
             string user_count;
 
             Console.WriteLine("Query: " + query);
@@ -135,8 +142,34 @@ namespace organizerFitness
         //Insert NewClient
         public void InsertNewClient(string firstname, string lastname, string birthdate, string phone, string email, string codfisc, string payment, string height, string weight, string notice)
         {
-            string query = "INSERT INTO t_clients(`c_name`,`c_lastname`,`c_birth`,`c_height`,`c_startweight`,`c_codfisc`,`c_pay`,`c_phone`,`c_email`,`c_notice`)" +
-                "VALUES('"+ firstname + "','" + lastname + "','" + birthdate + "','" + height + "','" + weight + "','" + codfisc + "','" + payment + "','" + phone + "','" + email + "','" + notice + "')";
+            string query = (
+                "INSERT "
+            +   "  INTO t_clients "
+            +   "     ( `c_name`"
+            +   "     ,`c_lastname`"
+            +   "     ,`c_birth`"
+            +   "     ,`c_height`"
+            +   "     ,`c_startweight`"
+            +   "     ,`c_codfisc`"
+            +   "     ,`c_pay`"
+            +   "     ,`c_phone`"
+            +   "     ,`c_email`"
+            +   "     ,`c_notice`"
+            +   "     ) "
+            +   "VALUES "
+            +   "     ( '" + firstname + "'"
+            +   "     , '" + lastname + "',"
+            +   "     , '" + birthdate + "'"
+            +   "     , '" + height + "'"
+            +   "     , '" + weight + "'"
+            +   "     , '" + codfisc + "'"
+            +   "     , '" + payment + "'"
+            +   "     , '" + phone + "'"
+            +   "     , '" + email + "'"
+            +   "     , '" + notice + "'"
+            +   "     )"
+            +   ";"
+            );
 
             
 
@@ -156,9 +189,15 @@ namespace organizerFitness
 
         public void InsertNewContract(string clientNr, string conStart, string conEnd, int length, string paid)
         {
-            Console.WriteLine("New Contract- Data: "+ clientNr +" " + conStart + " " + length + " " + conEnd);
+            Console.WriteLine("New Contract- Data: " + clientNr + " " + conStart + " " + length + " " + conEnd);
 
-            string querySearchContract = "SELECT COUNT(*) FROM t_contracts WHERE co_active = 1 AND co_number = " + clientNr + ";";
+            string querySearchContract = (
+                "SELECT COUNT(*)"
+            +   "  FROM t_contracts"
+            +   " WHERE co_active = 1"
+            +   "   AND co_number = '" + clientNr + "'"
+            +   ";"
+            );
 
             //Check if contract already exists
             if (this.OpenConnection() == true)
@@ -172,7 +211,12 @@ namespace organizerFitness
                 //If yes put flag co_active on 0
                 if (count == 1)
                 {
-                    string querySetNullActive = "UPDATE t_contracts SET co_active = 0 WHERE co_number = '" + clientNr + "';";
+                    string querySetNullActive = (
+                        "UPDATE t_contracts"
+                    +   "   SET co_active = 0"
+                    +   " WHERE co_number = '" + clientNr + "'"
+                    +   ";"
+                    );
 
                     MySqlCommand cmdSetNull = new MySqlCommand(querySetNullActive, this.connection);
 
@@ -181,8 +225,26 @@ namespace organizerFitness
             }
 
             //Insert new contract for client
-            string queryNewContract = "INSERT INTO t_contracts(`co_number`,`co_begin`,`co_end`,`co_active`,`co_duration`,`co_paid`) " +
-                "VALUES ('" + clientNr + "','" + conStart + "','" + conEnd + "', 1,'" + length + "','" + paid + "');";
+            string queryNewContract = (
+                "INSERT" 
+            +   "  INTO t_contracts" 
+            +   "     ( `co_number`" 
+            +   "     , `co_begin`" 
+            +   "     , `co_end`" 
+            +   "     , `co_active`" 
+            +   "     , `co_duration`" 
+            +   "     , `co_paid`" 
+            +   "     ) " 
+            +   "VALUES "
+            +   "     ( '" + clientNr + "'" 
+            +   "     , '" + conStart + "'" 
+            +   "     , '" + conEnd + "'" 
+            +   "     , 1"
+            +   "     , '" + length + "'" 
+            +   "     , '" + paid + "'" 
+            +   "     )"
+            +   ";"
+            );
             Console.WriteLine("Test: " + queryNewContract);
 
             if (this.OpenConnection() == true)
@@ -203,7 +265,12 @@ namespace organizerFitness
         public string getNotice(string index, string notice)
         {
 
-            string query = "SELECT c_notice FROM t_clients WHERE cid ='" + index +"'";
+            string query = (
+                "SELECT c_notice" 
+            +   "  FROM t_clients" 
+            +   " WHERE cid ='" + index + "'"
+            +   ";"
+            );
             string user_notice;
 
             //Open Connection
@@ -234,7 +301,12 @@ namespace organizerFitness
         public void setNotice(string noticeClient, string clientID)
         {
             //Insert new contract for client
-            string query = "UPDATE t_clients SET c_notice = '" + noticeClient + "' WHERE cid = '" + clientID + "';";
+            string query = (
+                "UPDATE t_clients" 
+            +   "   SET c_notice = '" + noticeClient + "' " 
+            +   " WHERE cid = '" + clientID + "'" 
+            +   ";"
+            );
 
             Console.WriteLine("Test Query: " + query);
 
@@ -256,14 +328,18 @@ namespace organizerFitness
             if (this.OpenConnection() == true)
             {
                 DateTime dateTime = DateTime.UtcNow.Date;
-                string getQuery = "SELECT DATE_FORMAT(DATE_SUB(tco.co_end, INTERVAL 7 DAY), '%d.%m.%Y'), " +
-                                      "tco.co_number, " +
-                                      "tcl.c_name, " +
-                                      "tcl.c_lastname " +
-                                      "FROM t_contracts as tco " +
-                                      "INNER JOIN t_clients as tcl " +
-                                      "ON tcl.cid = tco.co_number " +
-                                      "Where tco.co_active = 1;";
+                string getQuery = (
+                    "SELECT DATE_FORMAT(DATE_SUB(tco.co_end, INTERVAL 7 DAY), '%d.%m.%Y')" 
+                +   "     , tco.co_number" 
+                +   "     , tcl.c_name" 
+                +   "     , tcl.c_lastname" 
+                +   "  FROM t_contracts  AS tco"
+                +   " INNER"
+                +   "  JOIN t_clients    AS tcl"
+                +   "    ON tcl.cid       = tco.co_number"
+                +   " WHERE tco.co_active = 1"
+                +   ";"
+                );
                 
                 MySqlCommand cmd = new MySqlCommand(getQuery, this.connection);
                 MySqlDataReader rdr = cmd.ExecuteReader();

@@ -147,7 +147,7 @@ namespace organizerFitness.Views
                 "SslMode=none;";
 
             string cmdString;
-            cmdString = ("SELECT  tcl.cid AS Nummer"
+            cmdString = ( "SELECT  tcl.cid AS Nummer"
                         + "     ,  tcl.c_lastname AS Nachname"
                         + "     ,  tcl.c_name AS Vorname"
                         + "     ,  DATE_FORMAT(tcl.c_birth, '%d-%m-%Y') AS Geburtstag"
