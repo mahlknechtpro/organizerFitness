@@ -1,4 +1,5 @@
-﻿using System;
+﻿using organizerFitness.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,7 +31,11 @@ namespace organizerFitness.forms
             //Werte wieder in die Textbox einfügen
 
             DBstatements db = new DBstatements();
-            db.GetBodyValues(cellValue);
+            ClientValues cValues = db.GetBodyValues(cellValue);
+            if (cValues == null)
+            {
+
+            }
 
             Console.WriteLine(values);
         }
