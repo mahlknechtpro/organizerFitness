@@ -125,6 +125,7 @@
     <Compile Include="forms\userNotice.xaml.cs">
       <DependentUpon>userNotice.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\ClientValues.cs" />
     <Compile Include="Viewmodels\ClientViewModel.cs" />
     <Compile Include="Viewmodels\MainViewModel.cs" />
     <Compile Include="Viewmodels\SettingsViewModel.cs" />

@@ -34,9 +34,12 @@ namespace organizerFitness.forms
             ClientValues cValues = db.GetBodyValues(cellValue);
             if (cValues == null)
             {
-
+                
             }
 
+            lbl_lastSave.Content = "Last save: " + cValues.v_date.ToString("dd/MM/yyyy");
+
+            Console.WriteLine(cValues.v_date.ToString("dd/MM/yyyy"));
             Console.WriteLine(values);
         }
 

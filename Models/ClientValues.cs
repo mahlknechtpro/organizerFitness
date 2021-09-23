@@ -23,7 +23,7 @@ namespace organizerFitness.Models
         public decimal v_weight { get; set; }
 
         public ClientValues(int v_cid) => this.v_cid = v_cid;
-        public ClientValues(int v_cid, 
+        public ClientValues(int v_cid,
             int v_calories, 
             DateTime v_date, 
             decimal v_arm, 
