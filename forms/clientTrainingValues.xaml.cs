@@ -24,8 +24,6 @@ namespace organizerFitness.forms
         {
             InitializeComponent();
 
-            string values = "";
-
             //Kontrolle wann letzte Mal abgespeichert
             //BSP: Last save: 21.09.2021
             //Werte wieder in die Textbox einfügen
@@ -62,6 +60,7 @@ namespace organizerFitness.forms
             string v_vfat;
             string v_calories;
             string v_weight;
+            string clientNr;
 
             //Data to variables
             v_arm = txtb_arm.Text;
@@ -75,8 +74,9 @@ namespace organizerFitness.forms
             v_vfat = txtb_vfat.Text;
             v_calories = txtb_calories.Text;
             v_weight = txtb_weight.Text;
+            clientNr = lbl_clientNr.Content.ToString();
 
-            db.saveClientValues(v_arm, v_chest, v_upperlegs, v_calves, v_stomach, v_hips, v_muscles,
+            db.saveClientValues(clientNr, v_arm, v_chest, v_upperlegs, v_calves, v_stomach, v_hips, v_muscles,
                 v_fat, v_vfat, v_calories, v_weight);
         }
 

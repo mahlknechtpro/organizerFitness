@@ -429,10 +429,56 @@ namespace organizerFitness
             }
         }
 
-        public void saveClientValues(string v_arm, string v_chest, string v_upperlegs, string v_calves, string v_stomach, string v_hips, string v_muscles,
+        public void saveClientValues(string clientNr, string v_arm, string v_chest, string v_upperlegs,
+            string v_calves, string v_stomach, string v_hips, string v_muscles,
                 string v_fat, string v_vfat, string v_calories, string v_weight)
         {
 
+            string dateToday = DateTime.Now.ToString("yyyy-MM-dd");
+
+            if (this.OpenConnection() == true)
+            {
+                string query = "INSERT"
+            + "  INTO t_cvalues"
+            + "     ( `v_cid`"
+            + "     , `v_date`"
+            + "     , `v_arm`"
+            + "     , `v_chest`"
+            + "     , `v_leg`"
+            + "     , `v_calves`"
+            + "     , `v_stomach`"
+            + "     , `v_hips`"
+            + "     , `v_muscle`"
+            + "     , `v_fat`"
+            + "     , `v_vfat`"
+            + "     , `v_calories`"
+            + "     , `v_weight`"
+            + "     ) "
+            + "VALUES "
+            + "     ( '" + clientNr + "'"
+            + "     , '" + dateToday + "'"
+            + "     , '" + v_arm + "'"
+            + "     , '" + v_chest + "'"
+            + "     , '" + v_upperlegs + "'"
+            + "     , '" + v_calves + "'"
+            + "     , '" + v_stomach + "'"
+            + "     , '" + v_hips + "'"
+            + "     , '" + v_muscles + "'"
+            + "     , '" + v_fat + "'"
+            + "     , '" + v_vfat + "'"
+            + "     , '" + v_calories + "'"
+            + "     , '" + v_weight + "'"
+            + "     )"
+            + ";";
+
+                //Create Mysql Command
+                MySqlCommand cmd = new MySqlCommand(query, this.connection);
+
+                MySqlDataReader MyReader = cmd.ExecuteReader();
+
+                this.CloseConnection();
+
+            }
         }
     }
 }
