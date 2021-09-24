@@ -51,17 +51,22 @@
         <Label Margin="190,130,0,0" Width="30" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">%</Label>
         <TextBox Margin="140,130,0,0" Width="50" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_fat"></TextBox>
 
-        <Label Margin="240,110,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Calories</Label>
-        <Label Margin="300,130,0,0" Width="30" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">kcal</Label>
-        <TextBox Margin="250,130,0,0" Width="50" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_calories"></TextBox>
-
-        <Label Margin="350,110,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Weight</Label>
-        <Label Margin="410,130,0,0" Width="30" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">kg</Label>
-        <TextBox Margin="360,130,0,0" Width="50" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_weight"></TextBox>
-
-        <Label Height="40" Width="Auto" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" x:Name="lbl_lastSave"></Label>
+        <Label Margin="240,110,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">vFat</Label>
+        <Label Margin="300,130,0,0" Width="40" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">%</Label>
+        <TextBox Margin="250,130,0,0" Width="50" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_vfat"></TextBox>
         
-        <!--Save and Cancel- Button-->            
+        <Label Margin="350,110,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Calories</Label>
+        <Label Margin="410,130,0,0" Width="40" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">kcal</Label>
+        <TextBox Margin="360,130,0,0" Width="50" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_calories"></TextBox>
+
+        <Label Margin="460,110,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Weight</Label>
+        <Label Margin="520,130,0,0" Width="30" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">kg</Label>
+        <TextBox Margin="470,130,0,0" Width="50" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_weight"></TextBox>
+
+        <Label Height="40" Width="Auto" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,10,0,0" x:Name="lbl_lastSave"></Label>
+        <Button Height="20" Width="75" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="200,0,0,0" x:Name="btn_clearValue" Click="clearValue_Click" Content="Clear" VerticalContentAlignment="Center"></Button>
+
+        <!--Save and Cancel- Button-->
         <Button Height="20" Width="75" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,100,0" Content="Save" Click="SaveBody_Click"></Button>
         <Button Height="20" Width="75" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,10,0" Content="Cancel" Click="ReturnBody_Click"></Button>
     </Grid>

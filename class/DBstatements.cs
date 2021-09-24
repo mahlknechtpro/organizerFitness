@@ -416,7 +416,7 @@ namespace organizerFitness
                         rdr.GetDecimal(8),    //Hüfte
                         rdr.GetDecimal(9),    //Muskeln
                         rdr.GetDecimal(10),   //Fett
-                        rdr.GetDecimal(11),   //Fett
+                        rdr.GetDecimal(11),   //vFett
                         rdr.GetDecimal(12)    //Gewicht
                     );
                 } catch (Exception ex)
@@ -427,6 +427,12 @@ namespace organizerFitness
             {
                 return new ClientValues(-100);
             }
+        }
+
+        public void saveClientValues(string v_arm, string v_chest, string v_upperlegs, string v_calves, string v_stomach, string v_hips, string v_muscles,
+                string v_fat, string v_vfat, string v_calories, string v_weight)
+        {
+
         }
     }
 }
