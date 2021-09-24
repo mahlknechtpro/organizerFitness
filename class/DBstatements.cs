@@ -404,6 +404,7 @@ namespace organizerFitness
                 try
                 {
                     rdr.Read();
+
                     return new ClientValues(
                         rdr.GetInt32(0),      //ClientNr
                         rdr.GetInt32(1),      //Kalorien
