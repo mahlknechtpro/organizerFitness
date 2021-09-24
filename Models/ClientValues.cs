@@ -49,5 +49,67 @@ namespace organizerFitness.Models
             this.v_vfat = v_vfat;
             this.v_weight = v_weight;
         }
+        
+        //TODO: 
+        // - Create a class in C# for each logical object in the database class. 
+        // - Migrate the fetching of the data from the database to the respective classes via static access
+        // - Create a core class as an interface
+        // - Always access the database object via the core class
+        
+        /* ----------------
+           -- EXAMPLE    --
+           ----------------
+           
+        public static ClientValue GetLatestClientValue(int v_cid) {
+            if (Core.GetDatabase().OpenConnection()) {
+                string query = (
+                    "SELECT v_cid"
+                +   "     , v_calories"
+                +   "     , v_date" 
+                +   "     , v_arm" 
+                +   "     , v_chest" 
+                +   "     , v_leg" 
+                +   "     , v_calves" 
+                +   "     , v_stomach" 
+                +   "     , v_hips" 
+                +   "     , v_muscle" 
+                +   "     , v_fat" 
+                +   "     , v_vfat"
+                +   "     , v_weight"
+                +   "  FROM t_cvalues" 
+                +   " WHERE v_cid = " + clientNr
+                +   "   AND vid = ("
+                +   "        SELECT MAX(vid)"
+                +   "          FROM t_cvalues" 
+                +   "         WHERE v_cid = " + clientNr
+                +   "             )"
+                +   ";"
+                );
+
+                MySqlCommand cmd = new MySqlCommand(query, this.connection);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                rdr.Read();
+                
+                ClientValues clientValues new ClientValues(
+                    rdr.GetInt32(0),      //ClientNr
+                    rdr.GetInt32(1),      //Kalorien
+                    rdr.GetDateTime(2),   //Datum
+                    rdr.GetDecimal(3),    //Arm
+                    rdr.GetDecimal(4),    //Brust
+                    rdr.GetDecimal(5),    //Beine
+                    rdr.GetDecimal(6),    //Unterschenkel
+                    rdr.GetDecimal(7),    //Bauch
+                    rdr.GetDecimal(8),    //Hüfte
+                    rdr.GetDecimal(9),    //Muskeln
+                    rdr.GetDecimal(10),   //Fett
+                    rdr.GetDecimal(11),   //Fett
+                    rdr.GetDecimal(12)    //Gewicht
+                );
+
+                Core.GetDatabase().CloseConnection();
+                return clientValues;
+            }
+        }
+        */
     }
 }
