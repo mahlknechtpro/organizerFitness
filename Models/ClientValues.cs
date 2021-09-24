@@ -48,6 +48,7 @@ namespace organizerFitness.Models
             this.v_fat = v_fat;
             this.v_vfat = v_vfat;
             this.v_weight = v_weight;
+            this.v_calories = v_calories;
         }
         
         //TODO: 

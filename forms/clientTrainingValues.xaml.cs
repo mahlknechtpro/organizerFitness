@@ -34,12 +34,23 @@ namespace organizerFitness.forms
             {
                 
             }
-
+            
+            lbl_clientNr.Content = cellValue;
             lbl_lastSave.Content = "Last save: " + cValues.v_date.ToString("dd/MM/yyyy");
 
 
-            Console.WriteLine(cValues.v_date.ToString("dd/MM/yyyy"));
-            
+            txtb_arm.Text = cValues.v_arm.ToString();
+            txtb_chest.Text = cValues.v_chest.ToString();
+            txtb_upperlegs.Text = cValues.v_leg.ToString();
+            txtb_lowerlegs.Text = cValues.v_calves.ToString();
+            txtb_stomach.Text = cValues.v_stomach.ToString();
+            txtb_hips.Text = cValues.v_hips.ToString();
+            txtb_muscles.Text = cValues.v_muscle.ToString();
+            txtb_fat.Text = cValues.v_fat.ToString();
+            txtb_vfat.Text = cValues.v_vfat.ToString();
+            txtb_calories.Text = cValues.v_calories.ToString();
+            txtb_weight.Text = cValues.v_weight.ToString();
+
         }
 
         private void SaveBody_Click(object sender, RoutedEventArgs e)

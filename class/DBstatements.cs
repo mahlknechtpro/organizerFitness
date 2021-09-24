@@ -471,6 +471,7 @@ namespace organizerFitness
             + "     )"
             + ";";
 
+                Console.WriteLine(query);
                 //Create Mysql Command
                 MySqlCommand cmd = new MySqlCommand(query, this.connection);
 
