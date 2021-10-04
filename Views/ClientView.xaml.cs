@@ -92,10 +92,11 @@ namespace organizerFitness.Views
             DB.OpenConnection();
 
             string MyConString =
-                "SERVER=mimasrv2.ddns.net;" +
+                "SERVER=159.69.105.146;" +
                 "DATABASE=db_organizerFitness;" +
-                "UID=mima;" +
-                "PASSWORD=mima_10492;" +
+                "PORT=3331;" +
+                "UID=root;" +
+                "PASSWORD=Mmn339FpS#E2f99!et;" +
                 "SslMode=none;";
 
             string cmdString;
@@ -140,10 +141,11 @@ namespace organizerFitness.Views
             DB.OpenConnection();
 
             string MyConString =
-                "SERVER=mimasrv2.ddns.net;" +
+                "SERVER=159.69.105.146;" +
                 "DATABASE=db_organizerFitness;" +
-                "UID=mima;" +
-                "PASSWORD=mima_10492;" +
+                "PORT=3331;" +
+                "UID=root;" +
+                "PASSWORD=Mmn339FpS#E2f99!et;" +
                 "SslMode=none;";
 
             string cmdString;
@@ -204,10 +206,11 @@ namespace organizerFitness.Views
             DB.OpenConnection();
 
             string MyConString =
-                "SERVER=mimasrv2.ddns.net;" +
+                "SERVER=159.69.105.146;" +
                 "DATABASE=db_organizerFitness;" +
-                "UID=mima;" +
-                "PASSWORD=mima_10492;" +
+                "PORT=3331;" +
+                "UID=root;" +
+                "PASSWORD=Mmn339FpS#E2f99!et;" +
                 "SslMode=none;";
 
             string cmdString;

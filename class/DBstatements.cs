@@ -41,10 +41,10 @@ namespace organizerFitness
             try
             {
                 MySqlConnectionStringBuilder connectionString = new MySqlConnectionStringBuilder();
-                connectionString.Server = "mimasrv2.ddns.net";
-                connectionString.Port = 3306;
-                connectionString.UserID = "mima";
-                connectionString.Password = "mima_10492";
+                connectionString.Server = "159.69.105.146";
+                connectionString.Port = 3331;
+                connectionString.UserID = "root";
+                connectionString.Password = "Mmn339FpS#E2f99!et";
                 connectionString.Database = "db_organizerFitness";
                 connectionString.SslMode = MySqlSslMode.None;
 
@@ -158,7 +158,7 @@ namespace organizerFitness
             +   "     ) "
             +   "VALUES "
             +   "     ( '" + firstname + "'"
-            +   "     , '" + lastname + "',"
+            +   "     , '" + lastname + "'"
             +   "     , '" + birthdate + "'"
             +   "     , '" + height + "'"
             +   "     , '" + weight + "'"
