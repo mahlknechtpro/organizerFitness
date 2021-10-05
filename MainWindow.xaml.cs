@@ -41,9 +41,6 @@ namespace organizerFitness
             //Start function USERCONNECTION
             DB.UserConnection(username, pwd);
 
-            /*forms.mainScreen mainScreen = new forms.mainScreen();
-            mainScreen.Show();*/
-
             //Opened windows get closed
             this.Close();
 
