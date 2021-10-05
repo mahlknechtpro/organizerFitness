@@ -58,6 +58,10 @@ namespace organizerFitness.Views
         #region ClientDataChange_Context
         private void ChangeData_Click(object sender, RoutedEventArgs e)
         {
+            //Get Index (ClientNr)
+            DataRowView dataRow = (DataRowView)grdClients.SelectedItem;
+            string cellValue = dataRow.Row.ItemArray[0].ToString();
+
 
         }
         #endregion
