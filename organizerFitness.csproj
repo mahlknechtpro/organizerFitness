@@ -113,6 +113,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="class\LogWriter.cs" />
+    <Compile Include="forms\clientScreen.xaml.cs">
+      <DependentUpon>clientScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="forms\clientTrainingValues.xaml.cs">
       <DependentUpon>clientTrainingValues.xaml</DependentUpon>
     </Compile>
@@ -138,6 +141,10 @@
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
+    <Page Include="forms\clientScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="forms\clientTrainingValues.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

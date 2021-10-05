@@ -1,0 +1,62 @@
+﻿<Window x:Class="organizerFitness.forms.clientScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:organizerFitness.forms"
+        mc:Ignorable="d"
+        Title="Client Data" Height="400" Width="650">
+    <Grid>
+        <Grid.ColumnDefinitions>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+
+        <!--Persoenliche Daten-->
+        <Label Margin="20,0,0,0" FontWeight="ExtraBold" Width="95" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Personal Data</Label>
+
+        <Label Margin="20,30,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">First Name</Label>
+        <TextBox Margin="30,50,0,0" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_firstname"></TextBox>
+
+        <Label Margin="170,30,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Last Name</Label>
+        <TextBox Margin="180,50,0,0" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_lastname"></TextBox>
+
+        <Label Margin="320,30,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Birthday</Label>
+        <TextBox Margin="330,50,0,0" Width="30" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_birthday"></TextBox>
+        <TextBox Margin="362,50,0,0" Width="30" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_birthmonth"></TextBox>
+        <TextBox Margin="394,50,0,0" Width="40" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_birthyear"></TextBox>
+
+        <Label Margin="470,30,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Phone</Label>
+        <TextBox Margin="480,50,0,0" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_phone"></TextBox>
+
+        <Label Margin="20,100,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Codice fiscale</Label>
+        <TextBox Margin="30,120,0,0" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_codfisc"></TextBox>
+
+        <Label Margin="170,100,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Payment</Label>
+        <ComboBox Margin="180,120,0,0" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="cmb_pay">
+            <ComboBoxItem>Credit Card</ComboBoxItem>
+            <ComboBoxItem>Bancomat</ComboBoxItem>
+            <ComboBoxItem>Bank Transfer</ComboBoxItem>
+            <ComboBoxItem>Cash</ComboBoxItem>
+        </ComboBox>
+
+        <Label Margin="320,100,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">E-Mail</Label>
+        <TextBox Margin="330,120,0,0" Width="150" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_email"></TextBox>
+
+        <Label Margin="20,170,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Height</Label>
+        <TextBox Margin="30,190,0,0" Width="40" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_height"></TextBox>
+
+        <Label Margin="120,170,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Startweight</Label>
+        <TextBox Margin="130,190,0,0" Width="40" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_weight"></TextBox>
+
+        <Label Margin="20,220,0,0" Content="Notiz"></Label>
+        <TextBox Margin="30,240,0,0" Height="90" Width="600" HorizontalAlignment="Left" x:Name="txtblo_notice"></TextBox>
+
+        <!--Speichern - Schließen-->
+        <Button Grid.Row="2" Height="20" Width="70" HorizontalAlignment="Right" Margin="0,0,10,0" Click="btn_Client_close">Close</Button>
+        <Button Grid.Row="2" Height="20" Width="70" HorizontalAlignment="Right" Margin="0,0,90,0" Click="btn_Client_save">Save</Button>
+    </Grid>
+</Window>

@@ -62,7 +62,8 @@ namespace organizerFitness.Views
             DataRowView dataRow = (DataRowView)grdClients.SelectedItem;
             string cellValue = dataRow.Row.ItemArray[0].ToString();
 
-
+            forms.clientScreen clientScreen = new forms.clientScreen(cellValue);
+            clientScreen.Show();
         }
         #endregion
 
