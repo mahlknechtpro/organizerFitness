@@ -262,5 +262,15 @@ namespace organizerFitness.Views
 
             DB.getNotice(cellValue, notice);
         }
+
+        private void GetCharts_Click(object sender, RoutedEventArgs e)
+        {
+            //Get Index (ClientNr)
+            DataRowView dataRow = (DataRowView)grdClients.SelectedItem;
+            string cellValue = dataRow.Row.ItemArray[0].ToString();
+
+            forms.clientCharts cl_charts = new clientCharts(cellValue);
+            cl_charts.Show();
+        }
     }
 }
