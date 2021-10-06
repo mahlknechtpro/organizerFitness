@@ -187,6 +187,40 @@ namespace organizerFitness
             }
         }
 
+        public void UpdateClient(string clientNr, string firstname, string lastname, string birthdate, string phone, string email, string codfisc, string payment, string height, string weight, string notice)
+        {
+            string query = (
+                "UPDATE t_clients " +
+                "SET " +
+                "`c_name` = '" + firstname + "', " +
+                "`c_lastname` = '" + lastname + "', " +
+                "`c_birth` = '" + birthdate + "', " +
+                "`c_height` = '" + height + "', " +
+                "`c_startweight` = '" + weight + "', " +
+                "`c_codfisc` = '" + codfisc + "', " +
+                "`c_pay` = '" + payment + "', " +
+                "`c_phone` = '" + phone + "', " +
+                "`c_email` = '" + email + "', " +
+                "`c_notice` = '" + notice + "' " +
+                "WHERE `cid` = " + clientNr + ";"
+                );
+
+            Console.WriteLine(query);
+            
+            if (this.OpenConnection() == true)
+            {
+                //Create Mysql Command
+                MySqlCommand cmd = new MySqlCommand(query, this.connection);
+
+                MySqlDataReader MyReader2 = cmd.ExecuteReader();
+
+                MessageBox.Show("Data saved!");
+
+                this.connection.Close();
+
+            }
+        }
+
         public void InsertNewContract(string clientNr, string conStart, string conEnd, int length, string paid)
         {
             Console.WriteLine("New Contract- Data: " + clientNr + " " + conStart + " " + length + " " + conEnd);

@@ -26,6 +26,9 @@ namespace organizerFitness.forms
         {
             InitializeComponent();
 
+            //Save clientNr
+            lbl_clientNr.Content = cellValue;
+
             DBstatements db = new DBstatements();
 
             if(db.OpenConnection() == true)
@@ -129,7 +132,45 @@ namespace organizerFitness.forms
 
         private void btn_Client_save(object sender, RoutedEventArgs e)
         {
+            //Initialize object
+            DBstatements db = new DBstatements();
 
+            //Initialize variables
+            string clientNr;
+            string firstname;
+            string lastname;
+            string birth_day;
+            string birth_month;
+            string birth_year;
+            string birthdate;
+            string phone;
+            string email;
+            string codfisc;
+            string payment;
+            string height;
+            string weight;
+            string notice;
+
+            clientNr = lbl_clientNr.Content.ToString();
+            firstname = txtb_firstname.Text;
+            lastname = txtb_lastname.Text;
+            phone = txtb_phone.Text;
+            email = txtb_email.Text;
+            codfisc = txtb_codfisc.Text;
+            payment = cmb_pay.Text;
+            height = txtb_height.Text;
+            weight = txtb_weight.Text;
+            notice = txtblo_notice.Text;
+
+            birth_day = txtb_birthday.Text;
+            birth_month = txtb_birthmonth.Text;
+            birth_year = txtb_birthyear.Text;
+            birthdate = birth_year + "-" + birth_month + "-" + birth_day;
+
+            height = height.Replace(',', '.');
+            weight = weight.Replace(',', '.');
+
+            db.UpdateClient(clientNr,firstname, lastname, birthdate, phone, email, codfisc, payment, height, weight, notice);
         }
     }
 }
