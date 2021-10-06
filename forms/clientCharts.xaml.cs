@@ -37,6 +37,8 @@ namespace organizerFitness.forms
             string bodyPart = cmb_bodyPart.Text;
             string sqlBody = "";
 
+            plot_clientValues.Refresh();
+
             //MessageBox.Show(bodyPart);
 
             if (bodyPart == "Arm")
@@ -110,7 +112,7 @@ namespace organizerFitness.forms
                 {
                     //MessageBox.Show(i.ToString());
                     values[i] = Convert.ToDouble(rdr.GetString(0));
-                    //MessageBox.Show(values[i].ToString());
+                    MessageBox.Show(values[i].ToString());
                     i++;
                 }
 
@@ -120,7 +122,7 @@ namespace organizerFitness.forms
 
                 plot_clientValues.Refresh();
 
-
+                Array.Clear(dataY, 0, dataY.Length);
 
 
                 rdr.Close();
