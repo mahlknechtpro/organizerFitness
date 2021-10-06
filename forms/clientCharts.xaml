@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" x:Name="lbl_clientNr" Visibility="Hidden"></Label>
-        <ComboBox Grid.Row="0" Width="120" Height="30" HorizontalAlignment="Left" Margin="10,0,10,0" VerticalContentAlignment="Center">
+        <ComboBox Grid.Row="0" x:Name="cmb_bodyPart" Width="120" Height="30" HorizontalAlignment="Left" Margin="10,0,10,0" VerticalContentAlignment="Center" >
             <ComboBoxItem>Arm</ComboBoxItem>
             <ComboBoxItem>Chest</ComboBoxItem>
             <ComboBoxItem>Leg</ComboBoxItem>
@@ -27,6 +27,8 @@
             <ComboBoxItem>Calories</ComboBoxItem>
             <ComboBoxItem>Weight</ComboBoxItem>
         </ComboBox>
+
+        <Button Content="Load" Width="120" Height="30" HorizontalAlignment="Left" Margin="150,0,0,0" Click="bodyValues_onClick"></Button>
         
         <WpfPlot x:Name="plot_clientValues" Grid.Row="1" />
 
