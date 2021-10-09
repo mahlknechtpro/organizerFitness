@@ -140,7 +140,7 @@ namespace organizerFitness
         }
 
         //Insert NewClient
-        public void InsertNewClient(string firstname, string lastname, string birthdate, string phone, string email, string codfisc, string payment, string height, string weight, string notice)
+        public void InsertNewClient(string firstname, string lastname, string birthdate, string phone, string email, string codfisc, string payment, string size, string height, string weight, string notice)
         {
             string query = (
                 "INSERT "
@@ -155,6 +155,7 @@ namespace organizerFitness
             +   "     ,`c_phone`"
             +   "     ,`c_email`"
             +   "     ,`c_notice`"
+            +   "     ,`c_size`"
             +   "     ) "
             +   "VALUES "
             +   "     ( '" + firstname + "'"
@@ -167,6 +168,7 @@ namespace organizerFitness
             +   "     , '" + phone + "'"
             +   "     , '" + email + "'"
             +   "     , '" + notice + "'"
+            +   "     , '" + size + "'"
             +   "     )"
             +   ";"
             );
@@ -187,7 +189,7 @@ namespace organizerFitness
             }
         }
 
-        public void UpdateClient(string clientNr, string firstname, string lastname, string birthdate, string phone, string email, string codfisc, string payment, string height, string weight, string notice)
+        public void UpdateClient(string clientNr, string firstname, string lastname, string birthdate, string phone, string email, string codfisc, string payment, string size, string height, string weight, string notice)
         {
             string query = (
                 "UPDATE t_clients " +
@@ -202,6 +204,7 @@ namespace organizerFitness
                 "`c_phone` = '" + phone + "', " +
                 "`c_email` = '" + email + "', " +
                 "`c_notice` = '" + notice + "' " +
+                "`c_size` = '" + size + "' " +
                 "WHERE `cid` = " + clientNr + ";"
                 );
 
@@ -456,6 +459,7 @@ namespace organizerFitness
                     );
                 } catch (Exception ex)
                 {
+                    string test = ex.ToString();
                     return new ClientValues(-100);
                 }
             } else
@@ -470,6 +474,7 @@ namespace organizerFitness
         {
 
             string dateToday = DateTime.Now.ToString("yyyy-MM-dd");
+            string weight = v_weight.Replace(',', '.');
 
             if (this.OpenConnection() == true)
             {
@@ -502,7 +507,7 @@ namespace organizerFitness
             + "     , '" + v_fat + "'"
             + "     , '" + v_vfat + "'"
             + "     , '" + v_calories + "'"
-            + "     , '" + v_weight + "'"
+            + "     , '" + weight + "'"
             + "     )"
             + ";";
 
@@ -512,9 +517,49 @@ namespace organizerFitness
 
                 MySqlDataReader MyReader = cmd.ExecuteReader();
 
+                MessageBox.Show("Data saved");
+
                 this.CloseConnection();
 
             }
         }
+
+        public void deleteClient(string clientID)
+        {
+            //Insert new contract for client
+            string queryTclient = (
+                "DELETE FROM t_clients WHERE cid = " + clientID + ";"
+            );
+
+            
+            if (this.OpenConnection() == true)
+            {
+                //Create Mysql Command
+                MySqlCommand cmdClients = new MySqlCommand(queryTclient, this.connection);
+
+                MySqlDataReader MyReader = cmdClients.ExecuteReader();
+
+                this.CloseConnection();
+
+            }
+        }
+        public void deleteValues(string clientID)
+        {
+            string queryTcvalues = (
+                "DELETE FROM t_cvalues WHERE v_cid = " + clientID + ";"
+                );
+
+            if (this.OpenConnection() == true)
+            {
+                //Create Mysql Command
+                MySqlCommand cmdValues = new MySqlCommand(queryTcvalues, this.connection);
+
+                MySqlDataReader MyReader = cmdValues.ExecuteReader();
+
+                this.CloseConnection();
+
+            }
+        }
+
     }
 }

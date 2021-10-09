@@ -44,6 +44,7 @@ namespace organizerFitness.forms
             string payment = cmb_pay.Text;
             string height = txtb_height.Text;
             string weight = txtb_weight.Text;
+            string size = txtb_size.Text;
             string birthdate;
             string notice = txtblo_notice.Text;
 
@@ -52,7 +53,7 @@ namespace organizerFitness.forms
             height = height.Replace(',', '.');
             weight = weight.Replace(',', '.');
 
-            DB.InsertNewClient(firstname,lastname,birthdate,phone,email,codfisc,payment,height,weight,notice);
+            DB.InsertNewClient(firstname,lastname,birthdate,phone,email,codfisc,payment,size,height,weight,notice);
             //(string firstname, string lastname, string birthdate, string phone, string email, string codfisc, string payment, string height, string weight)
         }
     }

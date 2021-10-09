@@ -70,7 +70,22 @@ namespace organizerFitness.Views
         #region DeleteClient_context
         private void DeleteClient_Click(object sender, RoutedEventArgs e)
         {
+            if (MessageBox.Show("Delete this client?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+            {
+                //do no stuff
+            }
+            else
+            {
+                
+                //Get Index (ClientNr)
+                DataRowView dataRow = (DataRowView)grdClients.SelectedItem;
+                string cellValue = dataRow.Row.ItemArray[0].ToString();
 
+                DBstatements db = new DBstatements();
+                db.deleteClient(cellValue);
+                db.deleteValues(cellValue);
+
+            }
         }
         #endregion
 
@@ -164,6 +179,7 @@ namespace organizerFitness.Views
                         + "     ,  tcl.c_pay AS Bezahlung"
                         + "     ,  tcl.c_phone AS Handynr"
                         + "     ,  tcl.c_email AS Mail"
+                        + "     ,  tcl.c_size AS Size"
                         + "  FROM t_clients AS tcl"
                         + ";"
             );
@@ -220,7 +236,7 @@ namespace organizerFitness.Views
 
             string cmdString;
             cmdString = "SELECT cid AS Nummer, c_lastname AS Nachname, c_name AS Vorname, DATE_FORMAT(c_birth, '%d-%m-%Y') AS Geburtstag, c_height AS Gewicht," +
-                " c_startweight AS Startgewicht, c_codfisc AS Steuernr, c_pay AS Bezahlung, c_phone AS Handynr, c_email AS Mail FROM t_clients " +
+                " c_startweight AS Startgewicht, c_codfisc AS Steuernr, c_pay AS Bezahlung, c_phone AS Handynr, c_email AS Mail, c_size AS Size FROM t_clients " +
                 "WHERE cid like '%" + searchValue + "%' || c_lastname like '%" + searchValue + "%' || c_name like '%" + searchValue + "%' || c_birth like '%" + searchValue + "%' || c_height like '%" + searchValue + "%'" +
                 " || c_startweight like '%" + searchValue + "%' || c_codfisc like '%" + searchValue + "%' || c_pay like '%" + searchValue + "%' || c_phone like '%" + searchValue + "%' || c_email like '%" + searchValue + "%'";
 

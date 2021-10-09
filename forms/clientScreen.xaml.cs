@@ -44,6 +44,7 @@ namespace organizerFitness.forms
                     "       ,c_phone" +
                     "       ,c_email" +
                     "       ,c_notice" +
+                    "       ,c_size" +
                     " FROM t_clients" +
                     " WHERE cid = '" + cellValue + "';" );
 
@@ -116,6 +117,7 @@ namespace organizerFitness.forms
                     txtb_phone.Text = rdr.GetString(7);
                     txtb_email.Text = rdr.GetString(8);
                     txtblo_notice.Text = rdr.GetString(9);
+                    txtb_size.Text = rdr.GetString(10);
 
                     MessageBox.Show("birthday: " + day + month + year);
                     
@@ -150,6 +152,7 @@ namespace organizerFitness.forms
             string height;
             string weight;
             string notice;
+            string size;
 
             clientNr = lbl_clientNr.Content.ToString();
             firstname = txtb_firstname.Text;
@@ -161,6 +164,7 @@ namespace organizerFitness.forms
             height = txtb_height.Text;
             weight = txtb_weight.Text;
             notice = txtblo_notice.Text;
+            size = txtb_size.Text;
 
             birth_day = txtb_birthday.Text;
             birth_month = txtb_birthmonth.Text;
@@ -170,7 +174,7 @@ namespace organizerFitness.forms
             height = height.Replace(',', '.');
             weight = weight.Replace(',', '.');
 
-            db.UpdateClient(clientNr,firstname, lastname, birthdate, phone, email, codfisc, payment, height, weight, notice);
+            db.UpdateClient(clientNr,firstname, lastname, birthdate, phone, email, codfisc, payment, size, height, weight, notice);
         }
     }
 }

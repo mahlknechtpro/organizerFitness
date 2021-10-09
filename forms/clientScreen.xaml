@@ -52,6 +52,9 @@
         <Label Margin="120,170,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Startweight</Label>
         <TextBox Margin="130,190,0,0" Width="40" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_weight"></TextBox>
 
+        <Label Margin="320,170,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Size</Label>
+        <TextBox Margin="330,190,0,0" Width="40" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="txtb_size"></TextBox>
+
         <Label Margin="20,220,0,0" Content="Notiz"></Label>
         <TextBox Margin="30,240,0,0" Height="90" Width="600" HorizontalAlignment="Left" x:Name="txtblo_notice"></TextBox>
 
