@@ -203,7 +203,7 @@ namespace organizerFitness
                 "`c_pay` = '" + payment + "', " +
                 "`c_phone` = '" + phone + "', " +
                 "`c_email` = '" + email + "', " +
-                "`c_notice` = '" + notice + "' " +
+                "`c_notice` = '" + notice + "', " +
                 "`c_size` = '" + size + "' " +
                 "WHERE `cid` = " + clientNr + ";"
                 );

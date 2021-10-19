@@ -8,12 +8,59 @@
         Title="Client charts" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="35"/>
             <RowDefinition />
             <RowDefinition Height="35" />
         </Grid.RowDefinitions>
 
+        <TabControl>
+            <TabItem Header="Arm" x:Name="ti_arm">
+                <WpfPlot x:Name="plot_values_arm" Grid.Row="1" />                
+            </TabItem>
+
+            <TabItem Header="Chest" x:Name="ti_chest">
+                <WpfPlot x:Name="plot_values_chest" Grid.Row="1" />
+            </TabItem>
+
+            <TabItem Header="Leg" x:Name="ti_leg">
+                <WpfPlot x:Name="plot_values_leg" Grid.Row="1" />
+            </TabItem>
+
+            <TabItem Header="Calves" x:Name="ti_calves">
+                <WpfPlot x:Name="plot_values_calves" Grid.Row="1" />
+            </TabItem>
+
+            <TabItem Header="Stomach" x:Name="ti_stomach">
+                <WpfPlot x:Name="plot_values_stomach" Grid.Row="1" />
+            </TabItem>
+
+            <TabItem Header="Hips" x:Name="ti_hips">
+                <WpfPlot x:Name="plot_values_hips" Grid.Row="1" />
+            </TabItem>
+
+            <TabItem Header="Muscle" x:Name="ti_muscle">
+                <WpfPlot x:Name="plot_values_muscle" Grid.Row="1" />
+            </TabItem>
+
+            <TabItem Header="Fat" x:Name="ti_fat">
+                <WpfPlot x:Name="plot_values_fat" Grid.Row="1" />
+            </TabItem>
+
+            <TabItem Header="vFat" x:Name="ti_vfat">
+                <WpfPlot x:Name="plot_values_vfat" Grid.Row="1" />
+            </TabItem>
+
+            <TabItem Header="Calories" x:Name="ti_calories">
+                <WpfPlot x:Name="plot_values_calories" Grid.Row="1" />
+            </TabItem>
+
+            <TabItem Header="Weight" x:Name="ti_weight">
+                <WpfPlot x:Name="plot_values_weight" Grid.Row="1" />
+            </TabItem>
+        </TabControl>
+
+
         <Label Grid.Row="0" x:Name="lbl_clientNr" Visibility="Hidden"></Label>
+        <!--
         <ComboBox Grid.Row="0" x:Name="cmb_bodyPart" Width="120" Height="30" HorizontalAlignment="Left" Margin="10,0,10,0" VerticalContentAlignment="Center" >
             <ComboBoxItem>Arm</ComboBoxItem>
             <ComboBoxItem>Chest</ComboBoxItem>
@@ -31,6 +78,6 @@
         <Button Content="Load" Width="120" Height="30" HorizontalAlignment="Left" Margin="150,0,0,0" Click="bodyValues_onClick"></Button>
         
         <WpfPlot x:Name="plot_clientValues" Grid.Row="1" />
-
+        -->
     </Grid>
 </Window>
