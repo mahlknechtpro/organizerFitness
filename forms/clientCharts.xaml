@@ -12,12 +12,12 @@
             <RowDefinition Height="35" />
         </Grid.RowDefinitions>
 
-        <TabControl>
-            <TabItem Header="Arm" x:Name="ti_arm">
+        <TabControl SelectionChanged="TabControl_SelectionChanged">
+            <TabItem Header="Arm" x:Name="ti_arm"  >
                 <WpfPlot x:Name="plot_values_arm" Grid.Row="1" />                
             </TabItem>
 
-            <TabItem Header="Chest" x:Name="ti_chest">
+            <TabItem Header="Chest" x:Name="ti_chest"  >
                 <WpfPlot x:Name="plot_values_chest" Grid.Row="1" />
             </TabItem>
 
@@ -60,24 +60,5 @@
 
 
         <Label Grid.Row="0" x:Name="lbl_clientNr" Visibility="Hidden"></Label>
-        <!--
-        <ComboBox Grid.Row="0" x:Name="cmb_bodyPart" Width="120" Height="30" HorizontalAlignment="Left" Margin="10,0,10,0" VerticalContentAlignment="Center" >
-            <ComboBoxItem>Arm</ComboBoxItem>
-            <ComboBoxItem>Chest</ComboBoxItem>
-            <ComboBoxItem>Leg</ComboBoxItem>
-            <ComboBoxItem>Calves</ComboBoxItem>
-            <ComboBoxItem>Stomach</ComboBoxItem>
-            <ComboBoxItem>Hips</ComboBoxItem>
-            <ComboBoxItem>Muscle</ComboBoxItem>
-            <ComboBoxItem>Fat</ComboBoxItem>
-            <ComboBoxItem>vFat</ComboBoxItem>
-            <ComboBoxItem>Calories</ComboBoxItem>
-            <ComboBoxItem>Weight</ComboBoxItem>
-        </ComboBox>
-
-        <Button Content="Load" Width="120" Height="30" HorizontalAlignment="Left" Margin="150,0,0,0" Click="bodyValues_onClick"></Button>
-        
-        <WpfPlot x:Name="plot_clientValues" Grid.Row="1" />
-        -->
     </Grid>
 </Window>
