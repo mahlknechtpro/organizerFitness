@@ -82,21 +82,7 @@ namespace organizerFitness.forms
 
                 while (rdr.Read())
                 {
-                    /*
-                     string getQuery = (
-                    "SELECT  c_name" +
-                    "       ,c_lastname" +
-                    "       ,c_birth" +
-                    "       ,c_height" +
-                    "       ,c_startweight" +
-                    "       ,c_codfisc" +
-                    "       ,c_pay" +
-                    "       ,c_phone" +
-                    "       ,c_email" +
-                    "       ,c_notice" +
-                    " FROM t_clients" +
-                    " WHERE cid = '" + cellValue + "';" );
-                    */
+                    
 
                     //Set birthday
                     string birthday = rdr.GetString(2);
@@ -114,6 +100,14 @@ namespace organizerFitness.forms
                     txtb_codfisc.Text = rdr.GetString(5);
                     //Problem Wert kann nicht angezeigt werden
                     //cmb_pay. = rdr.GetString(6);
+
+                    if (rdr.GetString(6) == "Bancomat")
+                    {
+                        MessageBox.Show("Pay: " + rdr.GetString(6));
+                        cmb_pay.Text = "Bancomat";
+                    }
+
+                    cmb_pay.SelectedValue = rdr.GetString(6);
                     txtb_phone.Text = rdr.GetString(7);
                     txtb_email.Text = rdr.GetString(8);
                     txtblo_notice.Text = rdr.GetString(9);
