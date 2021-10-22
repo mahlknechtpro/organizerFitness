@@ -98,16 +98,17 @@ namespace organizerFitness.forms
                     txtb_height.Text = rdr.GetString(3);
                     txtb_weight.Text = rdr.GetString(4);
                     txtb_codfisc.Text = rdr.GetString(5);
-                    //Problem Wert kann nicht angezeigt werden
-                    //cmb_pay. = rdr.GetString(6);
+                    
 
                     if (rdr.GetString(6) == "Bancomat")
-                    {
-                        MessageBox.Show("Pay: " + rdr.GetString(6));
-                        cmb_pay.Text = "Bancomat";
-                    }
-
-                    cmb_pay.SelectedValue = rdr.GetString(6);
+                        this.cmbi_bancomat.IsSelected = true;
+                    if (rdr.GetString(6) == "Bank Transfer")
+                        this.cmbi_transfer.IsSelected = true;
+                    if (rdr.GetString(6) == "Credit Card")
+                        this.cmbi_credit.IsSelected = true;
+                    if (rdr.GetString(6) == "Cash")
+                        this.cmbi_cash.IsSelected = true;
+                    
                     txtb_phone.Text = rdr.GetString(7);
                     txtb_email.Text = rdr.GetString(8);
                     txtblo_notice.Text = rdr.GetString(9);

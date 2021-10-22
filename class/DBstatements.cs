@@ -475,6 +475,16 @@ namespace organizerFitness
 
             string dateToday = DateTime.Now.ToString("yyyy-MM-dd");
             string weight = v_weight.Replace(',', '.');
+            string arm = v_arm.Replace(',', '.');
+            string chest = v_chest.Replace(',', '.');
+            string leg = v_upperlegs.Replace(',', '.');
+            string calves = v_calves.Replace(',', '.');
+            string stomach = v_stomach.Replace(',', '.');
+            string hips = v_hips.Replace(',', '.');
+            string muscles = v_muscles.Replace(',', '.');
+            string fat = v_fat.Replace(',', '.');
+            string vfat = v_vfat.Replace(',', '.');
+
 
             if (this.OpenConnection() == true)
             {
@@ -497,15 +507,15 @@ namespace organizerFitness
             + "VALUES "
             + "     ( '" + clientNr + "'"
             + "     , '" + dateToday + "'"
-            + "     , '" + v_arm + "'"
-            + "     , '" + v_chest + "'"
-            + "     , '" + v_upperlegs + "'"
-            + "     , '" + v_calves + "'"
-            + "     , '" + v_stomach + "'"
-            + "     , '" + v_hips + "'"
-            + "     , '" + v_muscles + "'"
-            + "     , '" + v_fat + "'"
-            + "     , '" + v_vfat + "'"
+            + "     , '" + arm + "'"
+            + "     , '" + chest + "'"
+            + "     , '" + leg + "'"
+            + "     , '" + calves + "'"
+            + "     , '" + stomach + "'"
+            + "     , '" + hips + "'"
+            + "     , '" + muscles + "'"
+            + "     , '" + fat + "'"
+            + "     , '" + vfat + "'"
             + "     , '" + v_calories + "'"
             + "     , '" + weight + "'"
             + "     )"

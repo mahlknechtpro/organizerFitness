@@ -37,10 +37,10 @@
 
         <Label Margin="170,100,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Payment</Label>
         <ComboBox Margin="180,120,0,0" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="cmb_pay">
-            <ComboBoxItem>Credit Card</ComboBoxItem>
-            <ComboBoxItem>Bancomat</ComboBoxItem>
-            <ComboBoxItem>Bank Transfer</ComboBoxItem>
-            <ComboBoxItem>Cash</ComboBoxItem>
+            <ComboBoxItem Content="Credit Card" x:Name="cmbi_credit"></ComboBoxItem>
+            <ComboBoxItem Content="Bancomat" x:Name="cmbi_bancomat"></ComboBoxItem>
+            <ComboBoxItem Content="Bank Transfer" x:Name="cmbi_transfer"></ComboBoxItem>
+            <ComboBoxItem Content="Cash" x:Name="cmbi_cash"></ComboBoxItem>
         </ComboBox>
 
         <Label Margin="320,100,0,0" Width="90" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">E-Mail</Label>
