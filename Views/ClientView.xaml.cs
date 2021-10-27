@@ -288,5 +288,14 @@ namespace organizerFitness.Views
             forms.clientCharts cl_charts = new clientCharts(cellValue);
             cl_charts.Show();
         }
+
+        private void ExtensionCon_Click(object sender, RoutedEventArgs e)
+        {
+            //Get Index (ClientNr)
+            DataRowView dataRow = (DataRowView)grdClients.SelectedItem;
+            string cellValue = dataRow.Row.ItemArray[0].ToString();
+
+
+        }
     }
 }

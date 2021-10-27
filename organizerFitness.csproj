@@ -150,6 +150,9 @@
     <Compile Include="forms\clientTrainingValues.xaml.cs">
       <DependentUpon>clientTrainingValues.xaml</DependentUpon>
     </Compile>
+    <Compile Include="forms\contractExtension.xaml.cs">
+      <DependentUpon>contractExtension.xaml</DependentUpon>
+    </Compile>
     <Compile Include="forms\NewClientScreen.xaml.cs">
       <DependentUpon>NewClientScreen.xaml</DependentUpon>
     </Compile>
@@ -181,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="forms\clientTrainingValues.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="forms\contractExtension.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

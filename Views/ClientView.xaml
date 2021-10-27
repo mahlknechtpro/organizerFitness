@@ -30,10 +30,11 @@
                         <MenuItem Header="Insert values" Click="InsertValues_Click" />
                         <MenuItem Header="Get charts" Click="GetCharts_Click" />
                         <MenuItem Header="Contract" Click="NewContract_Click"/>
+                        <MenuItem Header="Get notice" Click="GetNotice_Click"/>
                         <Separator />
                         <MenuItem Header="New Client" Click="NewClient_Click" />
                         <MenuItem Header="Delete Client" Click="DeleteClient_Click" />
-                        <MenuItem Header="Get notice" Click="GetNotice_Click"/>
+                        <MenuItem Header="Extension contract" Click="ExtensionCon_Click" />
                     </ContextMenu>
                 </DataGrid.ContextMenu>
                 <DataGrid.ColumnHeaderStyle>
